@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n,a,b,c,t;
+        for(n=100;n<=1000;n++)
+        {
+             a=n%10;
+             b=n%100/10;
+             c=n/100;
+            //  转换parseInt为十进制整数
+             a=parseInt(a);
+             b=parseInt(b);
+             c=parseInt(c);
+                t=a*a*a+b*b*b+c*c*c;
+            if(n==t)
+            {
+                document.write("&nbsp",n);
+            }
+        }
+    </script>
+</body>
+</html>

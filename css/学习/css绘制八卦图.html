@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>八卦图</title>
+    <style>
+        div{
+            width: 400px;
+            height: 800px;
+            background-color:white;
+            border-radius: 50%;
+            border-width: 10px 10px 10px 400px;
+            /* border-left:400px  solid black; */
+            border-style: solid;
+            border-color: black;
+            position: relative;
+            animation: eight 10s infinite;
+        }
+        div::after{
+            content: "";
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color:white;
+            border-radius: 50%;
+            border:150px black solid;
+            position: absolute;
+            right: 200px;
+        }
+        div::before{ 
+            content: "";
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color:black;
+            border-radius: 50%;
+            border:150px white solid;
+            position: absolute;
+            right: 200px;
+            top: 400px;
+        } 
+           @keyframes eight {
+            from{
+                transform: none;
+
+            }
+            to{
+                transform:rotate(360deg);
+            }
+            /* 0%{
+                transform: none;
+            }
+            25%{
+                transform:rotate(90deg)
+            }
+            50%{
+                transform:rotate(180deg)
+            }
+            51{
+                transform:rotate(182deg)
+            }
+            75%{
+                transform:rotate(270deg)
+            }
+            100%{
+                transform:rotate(360deg)
+            } */
+        }
+        
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

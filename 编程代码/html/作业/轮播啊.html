@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="图1.jpg" alt="" id="img01"> 
+        <script>
+          window.onload=function(){
+              setInterval(change,2000)
+          }
+          var count=1;
+          function change(){
+              var img=document.getElementById("img01")
+              img.src="图"+count+".jpg"
+              count++
+          if(count>3){
+              count=1
+          }
+          }
+            </script>
+</body>
+</html>

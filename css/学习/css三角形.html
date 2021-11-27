@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css三角形</title>
+    <style>
+        *{
+            margin:px;
+            padding: 0px;
+            }
+        #delta{
+            /*一.利用盒子模型边框向外扩展向外
+             width: 100px;
+            height: 100px;
+            background-color: aqua;
+            border-top: 50px solid red ;
+            border-bottom: 50px solid brown ;
+            border-right: 50px solid yellow;
+            border-left: 50px solid blue; */
+            /* 二.将宽高设为零，边框 设为透明,生成三角形*/
+            /* width: 0px;
+            height:0px; */
+            /* background-color: aqua; */
+            /* border-top: 0px solid transparent ;
+            border-bottom: 30px solid red;
+            border-right: 30px solid transparent;
+            border-left: 30px solid transparent;
+            float: left; */
+            /* 三.做一个梯形 */
+            /* width: 100px;
+            height:0px;
+            border-top: 0px solid transparent ;
+            border-bottom: 50px solid brown ;
+            border-right: 50px solid transparent;
+            border-left: 50px solid transparent; */
+            /* 四。做一个圆 */
+            width: 100px;
+            height: 100px;
+            border: 1px solid red ;
+            border-radius: 50px;
+            }
+         /*p{ */
+            /* 设为块级元素，在浮动情况下可以设置宽高，行内高 */
+            /* display:block;
+            line-height:50px; */
+        /* }     */
+        
+        
+    </style>
+</head>
+<body>
+    <div id="delta"></div>
+    <!-- <p>你好你好你好你好你好你好</p> -->
+</body>
+</html>

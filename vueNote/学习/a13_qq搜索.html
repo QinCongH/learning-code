@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 官网提供的 axios 在线地址 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!--接口 https://tenapi.cn/qqname/?qq=123 -->
+    <title>Document</title>
+    <style>
+        .headpic{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .headpic img{
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="headInput">
+            <input type="text" v-model="QQ" @keyup.enter="getQQ"  placeholder="请输入qq号">
+            <button @click="getQQ" >搜索</button>
+        </div>
+        <div class="headpic">
+            <img :src="headpic" alt="">
+        </div>
+        <div class="headText">
+            昵称：<p>{{name}}</p>
+            邮箱：<p>{{email}}</p>
+        </div>
+    </div>
+</body>
+<script>
+    var app=new Vue({
+        el:"#app",
+        data(){
+            return{
+                headpic:'',
+                name:'',
+                email:'',
+                QQ:''
+            }
+        },
+        methods:{
+            getQQ(){
+                axios.get("https://tenapi.cn/qqname/?qq="+this.QQ).then(
+                    (response)=>{
+
+                        this.headpic=response.data.imgurl;
+                        this.name=response.data.name;
+                        this.email=response.data.mail;
+                        console.log(this.headpic);
+                        console.log(this.name);
+                        console.log(this.email);
+                    }
+                ).catch(
+                    (error)=>{
+                        console.log(error);
+                    }
+                )
+            }
+        }
+    })
+</script>
+</html>

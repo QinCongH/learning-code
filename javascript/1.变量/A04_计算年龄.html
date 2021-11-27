@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <title>计算年龄</title>
+</head>
+
+<body>
+    <input type="text" name="bty" id="bty" value="" placeholder="请输入您的出生年月日">
+    <button id="btn">计算</button>
+
+    <!-- 需求：输入出生年月日输出年龄 -->
+    <!-- 思路：1.输入框输入出生年日2.利用今年的年份减去输入日期等于年龄3.输出 -->
+    <!-- <script>
+
+        // 方法1.js处理
+        var bty=prompt("请输入你的出生年月日：");
+        var mydate=new Date();//构建内置对象Date
+        var newdate=mydate.getFullYear();//使用对象里面的获取方法
+        var age=newdate-bty;
+        document.write("您的年龄是："+age+"岁");
+    </script>  -->
+    <!-- <script>
+        方法2.js与表单input输入处理
+         注意：点击事件函数内写方法
+        btn.onclick=function newfun(){
+            var bty=document.getElementById("bty").value;
+            var btn=document.getElementById("btn");
+            var mydate=new Date();
+            var year=mydate.getFullYear();
+            var age=year-bty;
+            document.write(age);
+            }
+
+    </script> -->
+    <!-- 方法三. Jquery -->
+    <script>
+        $(function () {
+            $("button").click(function () {
+                var year=$("input").val();
+                var mydate=new Date();
+                var age=mydate.getFullYear()-year;
+                $("input").val(age);
+            })
+        })
+    </script>
+    <!-- 方法4 Vue -->
+</body>
+
+</html>

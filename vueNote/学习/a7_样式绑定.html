@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.min.js"></script>
+    <title>Document</title>
+    <style>
+        .style01{
+            background-color: aquamarine;
+            padding:60px 0px;
+        }
+        .style02{
+            background-color: red;
+        }
+        .style03{
+            background-color: rgb(221, 221, 221);
+            font-size: 30px;
+        }
+        .style04{
+            background-color: antiquewhite;
+        }
+        .style05{
+            padding: 30px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 用 v-bind 来设置样式属性。 -->
+        <!-- 一.class -->
+        <!-- 1. 在对象中为 v-bind:class 设置一个对象，从而动态的切换 class。v-bind:class="{'类名':style01}"
+        style01为true则显示,false则隐藏-->
+        <div v-bind:class="{'style01':style01}">
+            1. 在对象中为 v-bind:class 设置一个对象，从而动态的切换 class 。   v-bind:class="{'类名':style01}"
+        style01为true则显示,false则隐藏
+        </div>
+        <hr>
+        <!-- 2.在对象中传入更多属性用来动态切换多个 class 。 -->
+        <div v-bind:class="{'style01':style01,'style02':style02}">
+            2.在对象中传入更多属性用来动态切换多个 class 
+        </div>
+        <hr>
+        <!-- - 3.直接绑定数据里的一个对象： -->
+        <div v-bind:class="objClass">
+            3.直接绑定数据里的一个对象：
+        </div>
+        <hr>
+        <!-- 4.把一个数组传给 v-bind:class  -->
+        <div v-bind:class="[aa,bb]">
+            4.把一个数组传给 v-bind:class 
+        </div>
+<hr>
+
+        <!-- 二.设置style -->
+        <!-- 1.在 v-bind:style 直接设置样式： -->
+        <div v-bind:style="{color:'red',background:bcg}">
+            1.在 v-bind:style 直接设置样式：
+        </div><hr>
+        <!-- 2.绑定到对象 -->
+        <div v-bind:style="styleObj">
+            2.绑定到对象
+        </div><hr>
+        <!-- 3.绑定到数组 -->
+        <div v-bind:style="[styleObj,style01]">
+            3.绑定到数组 
+        </div>
+
+    </div>
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                style01:true,
+                style02:true,
+                objClass:{
+                    style01:true,
+                    'style03':true,
+                },
+                aa:'style04',
+                bb:'style05',
+                bcg:"pink",
+                styleObj:{
+                    color:"skyblue",
+                    fontSize:"25px"
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

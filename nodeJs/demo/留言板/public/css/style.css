@@ -1,0 +1,9 @@
+header h1,header p{
+    display: inline-block;
+}
+header h1{
+    color: rgb(17, 77, 156);
+}
+header p{
+    color: rgb(116, 116, 116);
+}

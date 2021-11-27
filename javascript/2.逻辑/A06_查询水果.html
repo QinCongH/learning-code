@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<center>
+
+        <input type="text" id="fruit" value="">
+    <input type="button" onclick="frquery()" value="查询"> 
+
+</center>
+
+
+    <!-- 输入水果名称显示价格 -->
+    <script>
+        // 方法1.js弹窗
+        /*var fruit=prompt("请输入您想要查询的水果");
+        switch(fruit){
+            case "苹果":
+                alert("三元/1斤");
+                break;
+            case "西瓜":
+                alert("4元/斤");
+                break;
+                default:
+                    alert("没有此水果");    
+        }*/
+
+        // 方法2.获取input值查询
+        function frquery()
+        {
+             var fruit=document.getElementById("fruit").value;
+           switch(fruit)
+            {
+                case "苹果":
+                alert("三元/1斤");
+                break;
+            case "西瓜":
+                alert("4元/斤");
+                break;
+                default:
+                    alert("没有此水果");    
+            }
+        }
+       
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 输入想查找的数，有则返回索引，没有则返回没有 -->
+    <script>
+        function newfun(a)
+        {
+           let b=prompt("请输入您要查找的值：");
+           for(let i=0;i<a.length;i++)
+           {
+               (a[i]==b)?(alert("查找到了！索引为"+i)):'';
+           }
+        }
+        newfun(a=[1,2,3,4,5,6,32,3])
+    </script>
+</body>
+</html>

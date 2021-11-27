@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 数组中 前一个数与后一个数依次作比较 ，将小的数与大的数交换位置-->
+    <script>
+        function slectsort(arr)
+        {
+            let minidx=0;
+            for(let i=0;i<arr.length;i++)
+            {
+                minidx=i;
+                for(let j=i;j<arr.length;j++)
+                {
+                    if(arr[minidx]<arr[j])
+                    {
+                        minidx=j;
+                    }
+                }
+                let temp=arr[i];
+                arr[i]=arr[minidx];
+                arr[minidx]=temp;
+            }
+            console.log(arr);
+        }
+        slectsort(arr=[1,3,2,4]);
+    </script>
+</body>
+</html>

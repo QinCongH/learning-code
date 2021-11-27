@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body{background-image: url("墙纸.jpeg");background-size: cover;}
+.list{width: 800px;height: 100px;margin: auto;margin-top: 50px;}
+.list li{float: left;margin-left:10px;list-style-type: none;}
+.list img{width: 80px;height: 80px;}
+.list li:hover{
+    border: 1px solid rgb(115, 211, 228);
+}
+    </style>
+</head>
+<body>
+        <ul class="list">
+            <li><img src="IU1.png"/></li>
+            <li><img src="IU2.png"/></li>
+            </ul>
+<script>
+// 获取元素
+var imgs=document.querySelector('.list').querySelectorAll('img');
+console.log('imgs');
+// 使用循环点击鱼片更换背景
+for(i=0;i<imgs.length;i++){
+    // 给图片绑定点击事件
+imgs[i].onclick=function(){
+    document.body.style.backgroundImage="url("+this.src+")"
+    }
+
+}
+</script>
+</body>
+</html>

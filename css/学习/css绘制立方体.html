@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .main{
+        width: 600px;
+        height: 600px;
+        position: relative;
+        /* border: 1px solid red; */
+        margin:100px auto;
+        transform-style: preserve-3d;
+        /* 设置视距 */
+        perspective: 16000px;
+        /* transition: all 5s 5linear; */
+        animation: turn 5s infinite normal;
+      }
+     @keyframes turn {
+        0%{
+          transform: rotateX(0deg) rotateY(0deg);
+        }
+        100%{
+          transform: rotatex(360deg) rotateY(360deg);
+        }
+      }
+      .text{
+        /* 注意外边距，面面连接不设外边距*/
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        top:0;
+        left:0;
+     font-size: 100px;
+        color: white;
+        line-height: 250px;
+        text-align: center; 
+        /* box-shadow: 0 0 10px black;
+      border: 1px solid black; */
+      }
+      .text:nth-child(1){
+        /* background-color: red; */
+        background-image: url("墙纸.jpeg");
+        transform:translateZ(125px);
+      }
+      .text:nth-child(2){
+        /* background-color: rgba(43, 214, 63, 0.479); */
+        /* background-image: url('墙纸.jpeg'); */
+        transform: rotateY(180deg) translateZ(125px);
+      }
+      .text:nth-child(3){
+        /* background-color: rgb(41, 148, 167); */
+        background-image: url('墙纸.jpeg');
+        transform: rotateY(90deg) translateZ(125px);
+      }
+      .text:nth-child(4){
+        /* background-color: rgb(129, 136, 224); */
+        background-image: url('墙纸.jpeg');
+        transform: rotateY(-90deg) translateZ(125px);
+      }
+      .text:nth-child(5){
+        /* background-color: rgba(228, 80, 208, 0.596); */
+        background-image: url('墙纸.jpeg');
+        transform: rotateX(90deg) translateZ(125px);
+      }
+      .text:nth-child(6){
+        /* background-color: rgb(178, 202, 43); */
+        background-image: url('墙纸.jpeg');
+        transform: rotateX(-90deg) translateZ(125px);
+      }
+     
+    </style>
+</head>
+<body>
+  <div class="main">
+    <div class="text">1</div>
+    <div class="text">2</div>
+    <div class="text">3</div>
+    <div class="text">4</div>
+    <div class="text">5</div>
+    <div class="text">6</div>
+    </div>
+</body>
+</html>

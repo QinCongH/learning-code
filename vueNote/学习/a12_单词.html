@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 官网提供的 axios 在线地址 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<style>
+    #app {
+        width: 500px;
+        padding: 68px 41px;
+        box-shadow: 0px 0px 25px #eee;
+        margin: 78px auto;
+        height: 40vh;
+    }
+
+    h1 {
+        text-align: center;
+        line-height: 30px;
+        font-family: 宋体;
+        color: cadetblue;
+    }
+
+    h2 {
+        background: aliceblue;
+        padding: 10px;
+        border-radius: 15px;
+        color: cadetblue;
+        font-family: 宋体;
+    }
+
+    input {
+        border: none;
+        outline: none;
+        border-radius: 15px;
+        background-color: #eee;
+        height: 30px;
+        padding-left: 10px;
+        width: 88%;
+    }
+
+    button {
+        border-radius: 15px;
+        border: none;
+        outline: none;
+        background-color: antiquewhite;
+        height: 30px;
+        cursor: pointer;
+        /* font-family: 宋体; */
+    }
+
+    /* 响应式 */
+    /* 更大设备 */
+    @media screen and (min-width: 1281px) {}
+
+    /* 笔记本或PC */
+    @media screen and (min-width: 1024px) and (max-width: 1280px) {
+        #app{
+            box-shadow: none;
+        }
+    }
+
+    /* ##平板电脑/Ipad竖屏 */
+    @media screen and (min-width: 768px) and (max-width: 1023px) {}
+
+    /* 多数竖屏的智能手机 */
+    @media screen and (min-width: 320px) and (max-width: 767px) {}
+
+    /* 公共 */
+    @media screen and (min-width: 320px) and (max-width: 1023px) {
+        #app{
+            box-shadow: none;
+        }
+    }
+</style>
+
+<body>
+    <div id="app">
+        <h1>搜单词</h1>
+        <input type="text" v-model="words" placeholder="请输入单词" @keyup.enter="getWords">
+        <button @click="getWords">搜索</button>
+        <h2>{{wordsList}}</h2>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            words: "",
+            wordsList: "加载中..........."
+        },
+        methods: {
+            getWords() {
+                let script = document.createElement("script");
+                script.src = " http://dict.youdao.com/suggest?num=1&doctype=json&q=" + this.words +
+                    "&callback=test";
+                let head = document.querySelector("head");
+                head.appendChild(script);
+                window["test"] = (data) => {
+                    // var result=JSON.parse(data);
+                    // console.log(data.data);
+                    if (data.result.msg == "success") {
+                        this.wordsList = data.data.entries[0].explain;
+                        console.log(data);
+                        console.log(this.wordsList);
+                        console.log(data.result.msg)
+                        head.removeChild(script); //去除script
+                    } else {
+                        this.wordsList = "词汇量有限";
+                        head.removeChild(script); //去除script
+                    }
+
+                }
+            }
+        }
+    })
+</script>
+
+</html>
+<!-- http://dict.youdao.com/suggest?num=1&doctype=json&q=love -->

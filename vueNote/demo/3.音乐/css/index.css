@@ -1,0 +1,801 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none !important;
+}
+
+body,
+ul,
+dl,
+dd {
+  margin: 0px;
+  padding: 0px;
+}
+
+#app {
+  /* height: 500px; */
+  /* background-color: #fff8f0; */
+  width: 100%;
+  /* background-image: url(../images/bcg.jpg); */
+  background-size: cover;
+  position: relative;
+}
+
+header {
+  width: 100%;
+}
+
+header .container {
+  position: relative;
+  height: 60px;
+  background-color: rgba(75, 211, 200, 0.116);
+}
+
+.head-left {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+.head-left p {
+  color: #000;
+  font-family: 宋体;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.head-left p span {
+  font-size: 31px;
+  color: #14c99f;
+}
+
+.head-right {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+}
+
+.head-right div {
+  display: flex;
+  box-shadow: 0px 2px 8px rgb(110 165 157);
+}
+
+.head-right input {
+  outline: none;
+  border: none;
+  padding-left: 10px;
+  background-color: #14c99f11;
+
+
+}
+
+input::-webkit-input-placeholder {
+  color: #86a19b;
+}
+
+.head-right span {
+  display: block;
+  width: 30px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  background-color: #14c99f11;
+  color: #14c99f;
+}
+
+section .row {
+  /* height: 500px; */
+  background-color: #a9e4e4bd;
+}
+
+
+.music-left {
+  padding: 10px 0px;
+}
+
+.music-left ul {
+  /* height: 350px; */
+  height: 600px;
+  overflow: scroll;
+}
+
+
+
+.music-left ul:-webkit-scrollbar-track-piece {
+  /* 滚动条凹槽的颜色，还可以设置边框属性 */
+  background-color: #f8f8f8;
+}
+
+.music-left ul::-webkit-scrollbar {
+  /* 滚动条的宽度 */
+  width: 4px;
+  height: 0px;
+}
+
+.music-left ul::-webkit-scrollbar-thumb {
+  /* 滚动条的设置 */
+  background-color: #98b4b7;
+  background-clip: padding-box;
+  min-height: 28px;
+}
+
+.music-left ul::-webkit-scrollbar-thumb:hover {
+  background-color: #14c99f;
+}
+
+.music-left ul li {
+  height: 50px;
+  background: #fff;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.music-left ul li div:nth-of-type(1) {
+  width: 10%;
+  text-align: center;
+  color: rgb(52 208 188);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.music-left ul li div:nth-of-type(2) {
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.music-left ul li div:nth-of-type(2) h6 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.music-left ul li div:nth-of-type(3) {
+  width: 10%;
+  text-align: center;
+  color: rgb(52 208 188);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.music-ctn {
+  padding: 10px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 600px; */
+  flex-direction: column;
+}
+
+/* .music-ctn div {
+  width: 80%;
+  height: 100px;
+  background-color: #000
+} */
+
+
+.music-tle {
+  color: #000;
+  font-family: 宋体;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.music-right {
+  height: 580px;
+  overflow: scroll;
+}
+
+.music-right dl {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  /* max-height: 120px; */
+  border-bottom: 1px solid #fff;
+  margin-bottom: 10px;
+
+}
+
+.music-right dt {
+  width: 22%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.music-right dt img {
+  width: 44px;
+  height: 44px;
+}
+
+.music-right div {
+  width: 78%;
+  height: 100%;
+  padding-top: 5px;
+
+}
+
+
+.music-right div dd:nth-of-type(2) {
+  /* max-height: 80px; */
+  overflow: scroll;
+}
+
+.music-right div dd:nth-of-type(2)::-webkit-scrollbar-thumb {
+
+  background-color: #c0cfd1;
+  background-clip: padding-box;
+  min-height: 28px;
+}
+
+.music-right div dd:nth-of-type(2)::-webkit-scrollbar {
+
+  width: 4px;
+  height: 0px;
+}
+
+.music-right div dd:nth-of-type(2)::-webkit-scrollbar-thumb:hover {
+  background-color: #14c99f;
+}
+
+.music-right::-webkit-scrollbar-thumb {
+  /* 滚动条的设置 */
+  background-color: #98b4b7;
+  background-clip: padding-box;
+  min-height: 28px;
+}
+
+.music-right::-webkit-scrollbar {
+  /* 滚动条的宽度 */
+  width: 4px;
+  height: 0px;
+}
+
+.music-right::-webkit-scrollbar-thumb {
+  /* 滚动条的设置 */
+  background-color: #98b4b7;
+  background-clip: padding-box;
+  min-height: 28px;
+}
+
+.music-right::-webkit-scrollbar-thumb:hover {
+  background-color: #14c99f;
+}
+
+footer .container {
+  padding: 0px;
+  background: #eafaf9;
+}
+
+footer .container audio {
+  width: 100%;
+}
+
+
+
+
+/* s */
+.wheel-and-hamster {
+  --dur: 1s;
+  position: relative;
+  width: 300px;
+  /* height: 300px; */
+  /* width: 100%; */
+  /* height: 100%; */
+  margin: 60px auto;
+}
+
+.wheel,
+.hamster,
+.hamster div,
+.spoke {
+  position: absolute;
+}
+
+.wheel,
+.spoke {
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wheel {
+  background: radial-gradient(100% 100% at center, hsla(0, 0%, 60%, 0) 47.8%, hsl(0, 0%, 60%) 48%);
+  z-index: 2;
+}
+
+.hamster {
+  animation: hamster var(--dur) ease-in-out infinite;
+  top: 50%;
+  left: calc(50% - 3.5em);
+  width: 7em;
+  height: 3.75em;
+  transform: rotate(4deg) translate(-0.8em, 1.85em);
+  transform-origin: 50% 0;
+  z-index: 1;
+  top: 259px;
+}
+
+.hamster__head {
+  animation: hamsterHead var(--dur) ease-in-out infinite;
+  background: hsl(30, 90%, 55%);
+  border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
+  box-shadow:
+    0 -0.25em 0 hsl(30, 90%, 80%) inset,
+    0.75em -1.55em 0 hsl(30, 90%, 90%) inset;
+  top: 0;
+  left: -2em;
+  width: 2.75em;
+  height: 2.5em;
+  transform-origin: 100% 50%;
+}
+
+.hamster__ear {
+  animation: hamsterEar var(--dur) ease-in-out infinite;
+  background: hsl(0, 90%, 85%);
+  border-radius: 50%;
+  box-shadow: -0.25em 0 hsl(30, 90%, 55%) inset;
+  top: -0.25em;
+  right: -0.25em;
+  width: 0.75em;
+  height: 0.75em;
+  transform-origin: 50% 75%;
+}
+
+.hamster__eye {
+  animation: hamsterEye var(--dur) linear infinite;
+  background-color: hsl(0, 0%, 0%);
+  border-radius: 50%;
+  top: 0.375em;
+  left: 1.25em;
+  width: 0.5em;
+  height: 0.5em;
+}
+
+.hamster__nose {
+  background: hsl(0, 90%, 75%);
+  border-radius: 35% 65% 85% 15% / 70% 50% 50% 30%;
+  top: 0.75em;
+  left: 0;
+  width: 0.2em;
+  height: 0.25em;
+}
+
+.hamster__body {
+  animation: hamsterBody var(--dur) ease-in-out infinite;
+  background: hsl(30, 90%, 90%);
+  border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
+  box-shadow:
+    0.1em 0.75em 0 hsl(30, 90%, 55%) inset,
+    0.15em -0.5em 0 hsl(30, 90%, 80%) inset;
+  top: 0.25em;
+  left: 2em;
+  width: 4.5em;
+  height: 3em;
+  transform-origin: 17% 50%;
+  transform-style: preserve-3d;
+}
+
+.hamster__limb--fr,
+.hamster__limb--fl {
+  clip-path: polygon(0 0, 100% 0, 70% 80%, 60% 100%, 0% 100%, 40% 80%);
+  top: 2em;
+  left: 0.5em;
+  width: 1em;
+  height: 1.5em;
+  transform-origin: 50% 0;
+}
+
+.hamster__limb--fr {
+  animation: hamsterFRLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30, 90%, 80%) 80%, hsl(0, 90%, 75%) 80%);
+  transform: rotate(15deg) translateZ(-1px);
+}
+
+.hamster__limb--fl {
+  animation: hamsterFLLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30, 90%, 90%) 80%, hsl(0, 90%, 85%) 80%);
+  transform: rotate(15deg);
+}
+
+.hamster__limb--br,
+.hamster__limb--bl {
+  border-radius: 0.75em 0.75em 0 0;
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 70% 90%, 70% 100%, 30% 100%, 40% 90%, 0% 30%);
+  top: 1em;
+  left: 2.8em;
+  width: 1.5em;
+  height: 2.5em;
+  transform-origin: 50% 30%;
+}
+
+.hamster__limb--br {
+  animation: hamsterBRLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30, 90%, 80%) 90%, hsl(0, 90%, 75%) 90%);
+  transform: rotate(-25deg) translateZ(-1px);
+}
+
+.hamster__limb--bl {
+  animation: hamsterBLLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30, 90%, 90%) 90%, hsl(0, 90%, 85%) 90%);
+  transform: rotate(-25deg);
+}
+
+.hamster__tail {
+  animation: hamsterTail var(--dur) linear infinite;
+  background: hsl(0, 90%, 85%);
+  border-radius: 0.25em 50% 50% 0.25em;
+  box-shadow: 0 -0.2em 0 hsl(0, 90%, 75%) inset;
+  top: 1.5em;
+  right: -0.5em;
+  width: 1em;
+  height: 0.5em;
+  transform: rotate(30deg) translateZ(-1px);
+  transform-origin: 0.25em 0.25em;
+}
+
+
+
+/* Animations */
+@keyframes hamster {
+
+  from,
+  to {
+    transform: rotate(4deg) translate(-0.8em, 1.85em);
+  }
+
+  50% {
+    transform: rotate(0) translate(-0.8em, 1.85em);
+  }
+}
+
+@keyframes hamsterHead {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(0);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes hamsterEye {
+
+  from,
+  90%,
+  to {
+    transform: scaleY(1);
+  }
+
+  95% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes hamsterEar {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(0);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes hamsterBody {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(0);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes hamsterFRLimb {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(50deg) translateZ(-1px);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(-30deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterFLLimb {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(-30deg);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(50deg);
+  }
+}
+
+@keyframes hamsterBRLimb {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(-60deg) translateZ(-1px);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(20deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterBLLimb {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(20deg);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes hamsterTail {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(30deg) translateZ(-1px);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(10deg) translateZ(-1px);
+  }
+}
+
+@keyframes spoke {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-1turn);
+  }
+}
+
+.dotStyle {
+  display: none;
+}
+
+
+
+
+.videoBox {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoBox::after {
+  content: '';
+  display: block;
+  background: #1861618a;
+  /* inset: 0; */
+  width: 100%;
+  height: 100%;
+  /* z-index: -1; */
+  position: absolute;
+}
+
+
+.videoBox video {
+  z-index: 22;
+}
+
+.videostyle {
+  display: none;
+}
+
+
+
+
+
+
+
+.player_con {
+  width: 400px;
+  height: 435px;
+  position: absolute;
+  left: 16%;
+  top: 0px;
+}
+
+.player_con2 {
+  width: 400px;
+  height: 435px;
+  position: absolute;
+  left: 200px;
+  top: 0px;
+}
+
+.player_con2 video {
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  width: 355px;
+  height: 265px;
+}
+
+.disc {
+  position: absolute;
+  left: 73px;
+  top: 60px;
+  z-index: 9;
+}
+
+.cover {
+  position: absolute;
+  left: 125px;
+  top: 112px;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  z-index: 8;
+}
+
+
+
+
+
+
+
+/* 旋转的动画 */
+@keyframes Rotate {
+  from {
+    transform: rotateZ(0);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+/* 旋转的类名 */
+.autoRotate {
+  animation-name: Rotate;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+  animation-timing-function: linear;
+  animation-duration: 5s;
+}
+
+/* 是否正在播放 */
+.player_con.playing .disc,
+.player_con.playing .cover {
+  animation-play-state: running;
+}
+
+.play_bar {
+  position: absolute;
+  left: 200px;
+  top: -10px;
+  z-index: 10;
+  transform: rotate(-25deg);
+  transform-origin: 12px 12px;
+  transition: 1s;
+}
+
+/* 播放杆 转回去 */
+.player_con.playing .play_bar {
+  transform: rotate(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* s */
+
+/* 更大设备 */
+@media screen and (min-width: 1281px) {}
+
+/* 笔记本或PC */
+@media screen and (min-width: 1024px) and (max-width: 1280px) {}
+
+/* ##平板电脑/Ipad竖屏 */
+@media screen and (min-width: 768px) and (max-width: 1023px) {}
+
+/* 多数竖屏的智能手机 */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .phnoe {
+    display: none;
+  }
+
+  .footer {
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+  }
+}
+
+/* 公共 */
+@media screen and (min-width: 320px) and (max-width: 1023px) {}

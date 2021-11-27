@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 思路：能被四整除，不能整除100或者不能被400整除为闰年 -->
+    <script>
+        function runn(){
+            //方法1
+            var a=prompt("请输入年份：");
+            if((a%4==0)&&(a%100!=0)||(a%400==0))
+            {
+                console.log("是");
+            }else{
+                console.log("否");
+            }
+            //方法2
+            //(a%4==0)&&(a%100!=0)||(a%400==0)?(console.log("是")):(console.log("否"));
+
+        }
+        runn();
+    </script>
+</body>
+</html>

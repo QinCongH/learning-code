@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM对表格的操作</title>
+	</head>
+	<body onload="tableCell()">
+		<table border="0" cellspacing="2" bgcolor="black" id="mytable">
+			<tr bgcolor="white">
+				<td>第1行第1列</td><td>第1行第2列</td><td>第1行第3列</td>
+				</tr>
+			</table>
+			<tr bgcolor="white" id="mytr">
+				<td>第2行第1列</td><td>第2行第2列</td><td>第2行第3列</td>
+				</tr>
+				<br/>
+				<input type="button" value="创建表格" onclick="createTable()">
+				<input type="button" value="插入行一" onclick="inserRow1()">
+				<input type="button" value="插入行二" onclick="inserRow2()">
+				<input type="button" value="删除一行" onclick="deleteRow()">
+				<input type="button" value="删除一列" onclick="deleteCol()">
+				<input type="button" value="修改单元格" onclick="operateCell()">
+				<input type="button" value="删除表格" onclick="deleteTable()">
+			</table>
+			<script>
+					function createTable(){
+					//创建一张一行两列的表格
+					var mytable=document.createElement("table");
+					mytable.border="0"; //也可用setAttribute进行属性设置
+					mytable.setAttribute("cellspacing","2");
+					mytable.setAttribute("width","60%");
+					mytable.bgColor="black";
+					var myrow=document.createElement("tr");//创建表格的第一行
+					myrow.bgcolor="white";
+					var mycell=document.createElement("td");//创建表格的第一行第一列
+					mycell.height="80";
+					mycell.appendChild(document.createTextNode("第1行第1列"));
+					myrow.appendChild(mycell);
+					var mycell=document.createElement("td");//创建表格的第一行第二列
+					mycell.appendChild(document.createTextNode("第1行第2列"));
+					myrow.appendChild(mycell);
+					//将tr这一行的节点添加到table中
+					myrow.appendChild(myrow);
+					//将表格元素添加到body当中
+					document.body.appendChild(mytable);
+					}	
+					function inserRow1(){
+						//利用inserHtml向表格的最后插入一行
+						var mytable=document.getElementById("mytable");
+						var newRow="<tr bgcolor='orange'><td>第3行第1列</td>"+"<td>第3行第2列</td><td>第3行第3列</td>"
+						mytable.inserHTML=mytable.inserHTM+newRow;
+					}
+					function inserRow2(){
+						//利用inserRow向表格任意位置插入一行
+						var mytable=document.createElement("mytable");
+						var newRow=mytable.insertRow(-1);
+						var mytd1=newRow.insertCell(-1);
+						mytd1.innerHTML="第3行第1列";
+						var mytd2=newRow.insertCell(-1);
+						mytd1.innerHTML="第3行第2列";
+						var mytd3=newRow.insertCell(-1);
+						mytd1.innerHTML="第3行第3列";
+						newRow.style.background="orange";
+						newRow.style.height="40px";
+					}
+					function deleteTable(){
+						//删除整个表格
+						var mytable=document.createElement("mytable");
+						mytable.remove();
+					}
+					function deleteRow(){
+						//删除表格中的一行，使用deleteRow
+						var mytable=document.createElement("mytable");
+						mytable.deleteRow(0);//参数0表示删除第一行
+					}
+					//删除表格中的一列，先获取表格的行，再指定删除该行的某一列
+					function deleteCol(){
+						var mytable=document.createElement("mytable");
+						var mytr=mytable.rows[1];
+						mytr.deletecell(2);	
+					}
+					function operateCell(){
+						//利用表格的行列索引操作单元格
+						var mytable=document.createElement("mytable");
+						var cell=mytable.rows[1].cells[2];//获取到第二行第三列
+						cell.style.backgroundColor="yellow";
+					}
+					</script>
+	</body>
+</html>

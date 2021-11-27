@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
+    <script src="//unpkg.com/layui@2.6.8/dist/layui.js"></script>
+    <title>Document</title>
+    <style>
+        .atmctn {
+            width: 300px;
+            height: 200px;
+            border: 10px solid skyblue;
+
+        }
+        .atmtop{
+            margin-top: 50px;
+            margin-left: 30px;
+        }
+        button{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="atm">
+        <div class="layui-container">
+            <div class="layui-row">
+                <div class="layui-col-md4">
+                    &nbsp;
+                </div>
+                <div class="layui-col-md4">
+                    <div class="atmctn">
+                        <div class="atmtop">
+                            <center><h1>ATM机</h1></center>
+                            <span>余额：</span>
+                            <input type="text" value="0" placeholder="" id="Balance" disabled>
+                            <br>
+                            <br>
+                            <center>
+                                <input type="button" value="存钱" id="add" class="add" onclick="addmonny()">
+                                &nbsp;
+                                <input type="button" value="取钱" id="add" class="jian" onclick="Minus()">
+                            </center>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4">
+                    &nbsp;
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 里面存有100元，
+        （1）如果取钱，显示余额 
+        （2）存钱，显示余额
+        （3）退出
+        （4）显示余额
+    -->
+    <script>
+        function addmonny() {
+            let Blc = document.getElementById("Balance").value;
+            let add = document.getElementById("add");
+            // alert("test");
+            let am = Number(prompt("请您输入要存的金额："));
+            Blc = Number(Blc) + am; //注意 js中一定要类型转化为数字
+            (confirm("您确定要存" + am + "元钱?")) ? (document.getElementById("Balance").value = Blc) : "";
+        }
+
+        function Minus() {
+            let Blc = document.getElementById("Balance").value;
+            let jian = document.getElementById("jian");
+            let jm = Number(prompt("请您输入要取的金额"));
+            Blc = Number(Blc) - jm;
+            (confirm("您确定要取" + jm + "元钱?")) ? ((Blc > 0) ? (document.getElementById("Balance").value = Blc) : (alert(
+                "您的余额不足"))) : "";
+        }
+    </script>
+</body>
+
+</html>

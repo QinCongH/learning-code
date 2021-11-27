@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+    width:250px;
+    margin: 0 auto;
+    height: 250px;
+}
+input{
+    width: 100px;
+    margin-top: 20px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+select{
+    height: 30px;
+    line-height: 30px;
+    width: 50px;
+    font-size: 18px;
+    color:#ff4387;
+}
+button{
+    width: 30px;
+    height: 30px;
+    background: none;
+    display: inline-block;
+    position: relative;
+    bottom: 1px;
+    left:90px;
+    top:10px;
+}
+#btn{
+    position: relative;
+}
+#fh{
+    display: inline-block;
+    position: absolute;
+    top:15px;
+}
+.jieguo{
+    position: relative;
+    left: 33px;
+}
+        </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Calculate By nanxI</legend>
+        <div>
+        第一个数：<input type="text" name="num" value="" />
+        </div>
+        第二个数：<input type="text" name="num" value="" />
+        <div id="btn">
+        <span id="fh">算式符号：</span>
+        <button id="jia" >+</button>
+        <button id="jian" >-</button>
+        <button id="cheng" >×</button>
+        <button id="chu" >÷</button>
+        </div>
+        结果：<input type="text" name="num" value="" class="jieguo"/>
+    </fieldset>
+    <script>
+        function cal(){
+    var num=document.getElementsByName('num');
+    var select=document.getElementsByTagName('option');
+    var z;
+    var btn=document.getElementById('get');
+    var jia=document.getElementById('jia');
+    var jian=document.getElementById('jian');
+    var cheng=document.getElementById('cheng');
+    var chu    =document.getElementById('chu');
+    jia.onclick = function jia(){
+        var x=num[0].value;
+        var y=num[1].value;
+        z = Number(x) + Number(y);
+        num[2].value = z;
+    }
+    jian.onclick = function jian(){
+        var x=num[0].value;
+        var y=num[1].value;
+        z = Number(x) - Number(y);
+        num[2].value = z;
+    }
+    cheng.onclick = function cheng(){
+        var x=num[0].value;
+        var y=num[1].value;
+        z = Number(x) * Number(y);
+        num[2].value = z;
+    }
+    chu.onclick = function chu(){
+        var x=num[0].value;
+        var y=num[1].value;
+        z = Number(x) / Number(y);
+        num[2].value = z;
+    }
+
+}
+cal();
+        </script>
+</body>
+</html>

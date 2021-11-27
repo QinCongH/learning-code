@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.min.js"> 
+
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- computed
+    我们可以使用 methods 来替代 computed，效果上两个都是一样的，但是 computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，函数总会重新调用执行。
+computed 性能会更好，但是如果你不希望缓存，你可以使用 methods 属性。
+
+
+    -->
+    <div id="app">
+        <h1>{{data1}}</h1>
+        <h1>{{newf}}</h1>
+        <h1>{{newf1}}</h1>
+    </div>
+</body>
+<script>
+    var app=new Vue({
+        el:"#app",
+        data:{
+            data1:"abcdefg"
+        },
+        computed:{
+            newf:function(){
+               return this.data1.split('').reverse().join('')
+            },
+            newf1:function(){
+                return this.data1+"hijk";
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <!-- 1.v-text -->
+        <h1 v-text="text">
+        </h1>
+        <hr>
+        直接通过模板获取：<h1>{{text}}</h1>
+        <hr>
+        <!-- 2.v-html -->
+        <div v-html="message">
+
+        </div>
+        <hr>
+        <!--3.v-on:click & @click事件  -->
+        <button v-on:click="testC">
+            点击事件
+        </button>
+        <button @click="testC">
+          缩写
+        </button><br><br>
+        <button @mouseover="testM">
+            悬浮事件
+        </button>
+        <!--  -->
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'.box',
+        data:{
+            text:"v-text获取标签里的文本，不渲染html标签",
+            message:"<h1>v-html获取标签里的内容,会渲染html标签</h1>",
+        },
+        methods:{
+            testC:function(){
+                alert("v-on:click & @click事件");
+            },
+            testM:function(){
+                alert("悬浮事件");
+            }
+        }
+            })
+</script>
+</html>

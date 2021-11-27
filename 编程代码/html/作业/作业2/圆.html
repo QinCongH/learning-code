@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <canvas id="canvas" width="500" height="500"></canvas>
+</body>
+<script>
+    var canvas=document.getElementById("canvas");
+var cxt=canvas.getContext("2d");
+cxt.beginPath();
+cxt.arc(300,300,50,0,360,false);
+cxt.fillStyle="red";
+cxt.fill();
+cxt.strokeStyle="green";
+cxt.stroke();
+cxt.closePath();
+    </script>
+</html>

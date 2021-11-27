@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+   <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .nav{
+            width: 1200px;
+            height: auto;
+        }
+        .list{
+            float: left;
+            height: 60px;
+            width: 540px;
+            /* background-color: orangered; */
+            /* 居中 */
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .list li{
+            float: left;
+            width: 80px;
+            height: 60px;
+            margin-left:10px;
+            list-style: none;
+            line-height: 60px;
+            border-radius: 5px;
+            /* box-shadow: 0px 0px 0px black; */
+        }
+        
+        li:nth-of-type(2n){
+            background-color: blanchedalmond;
+        }
+        li:nth-of-type(2n-1){
+            background-color: rgb(205, 255, 216);
+        }
+        .list li a{
+            display: block;
+            width: 80px;
+            height: 60px;
+            text-decoration: none;
+            text-align: center;
+            color: black;
+        }
+        button{
+            border: none;
+            background-color: brown;
+            opacity: 0.4;
+            margin-left: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+    <ul class="list">
+        <li><a href="#">你好</a></li>
+        <li><a href="#">你好</a></li>
+        <li><a href="#">你好</a></li>
+        <li><a href="#">你好</a></li>
+        <li><a href="#">你好</a></li>
+        <li><a href="#">你好</a></li>
+    </ul>
+    <button>点击</button>
+    </div>
+ 
+    <script>
+        $(function()
+        {
+            // $("button").click(
+            //     function()
+            //     {
+            //         $("li:nth-of-type(2n-1)").hide();
+            //     }
+            // )
+            // $("button").keypress(
+            //     function()
+            //     {
+            //         $("li:nth-of-type(2n-1)").toggle();
+            //     }
+            // )
+                // $("button").click(
+                //     function(){
+                //         $("li").toggle(1000);
+                //     }
+                // )
+                // $("button").click(
+                    // function()
+                    // {
+                    //      $("li").fadeIn();
+                    //      $("li").fadeOut();
+                    //      $("li").fadeToggle(1000,function(){
+                    //          alert("成功");
+                    //      });
+                    //     $("li").fadeto(1000,0.5);
+                    // }
+                // )
+                $("button").click(
+                    function(){
+                        $("li:first-child").animate({width:'100px'},1000);
+                    }
+                )
+        })
+    </script>
+</body>
+</html>

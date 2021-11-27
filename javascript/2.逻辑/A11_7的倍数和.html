@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1-100中7的倍数和 -->
+    <script>
+        function seven(a)
+        {
+            let i=0,sun=0;
+            for(i=0;i<a;i++)
+            {
+                if(i%7==0)
+                {
+                    sun=sun+i;
+                }
+            }
+            document.write(sun);
+        }
+        seven(100);
+                // 1.a表示总个数
+                // 2.定义累加器
+                // 3。i%7==0 判断i是否是7的倍数
+    </script>
+</body>
+</html>

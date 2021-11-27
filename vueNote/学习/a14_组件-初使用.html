@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>创建组件</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <all></all>
+        <test></test>
+        <Proptest message="Proptest"></Proptest>
+        <input type="text" v-model="stateMsg">
+        <Proptest :message="stateMsg"></Proptest>
+    </div>
+</body>
+<script>
+    //全局组件
+    Vue.component('all', {
+        template: '<h1>全局组件</h1>'
+    })
+    // 局部组件注册
+    var Child = {
+        template: '<h1>子组件</h1>'
+    }
+    //props使用
+    Vue.component('Proptest', {
+        props: ['message'],
+        template: '<h1>{{message}}</h1>',
+    })
+    // 动态prop
+
+
+
+    var app = new Vue({
+        el: '#app',
+        components: {
+            'test': Child
+            // 组件名：注册变量名
+        },
+        data: {
+            stateMsg: "内容"
+        },
+        methods: {
+
+        }
+    })
+</script>
+<!-- 
+    1.创建局部组件
+        注册->配置->使用（只能在父组件中使用）
+            1)注册：var Child={
+                template:'<h1>子组件</h1>'
+                }
+            2）配置组件名
+                 components:{
+                'test':Child
+                // 组件名：注册变量名
+                },    
+            3)使用
+             <test></test>    
+    2.创建全局组件
+        Vue.component(tagName, options);
+                注册
+        Vue.component('all',{
+                template:'<h1>全局组件</h1>'
+                })
+                使用
+                <all></all>
+
+    3.Prop
+        prop 是子组件用来接受父组件传递过来的数据的一个自定义属性。
+            //props使用
+            Vue.component('Proptest',{
+                props:['message'],
+                template:'<h1>{{message}}</h1>',
+            })
+                1)静态message="Proptest"
+                2）动态:message="stateMsg"
+    4.动态prop
+    类似于用 v-bind 绑定 HTML 特性到一个表达式，也可以用 v-bind 动态绑定 props 的值到父组件的数据中。每当父组件的数据变化时，该变化也会传导给子组件
+ -->
+
+</html>

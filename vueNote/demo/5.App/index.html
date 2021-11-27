@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js"></script>
+    <script src="https://use.fontawesome.com/e9934fb665.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row appTop">
+                <div class="col-md-12">
+                    <div class="appTle">
+                        <img src="img/logo.png" alt="">
+                    </div>
+                    <div class="appSearch">
+                        
+                        <input type="text" class="form-control" @keyup.enter="getapp" placeholder="请输入app" v-model="appWord">
+                        <a href="javascript:;" @click="getapp" type="button" class="btn btn-default"><i class="fa fa-search"
+                                aria-hidden="true"></i>
+                            </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row appFoot">
+                <div class="col-md-3 col-xs-6 mt30" v-for="value in appList">
+                    <div class="appCtn" v-if="value.userCount>0?appt:appf">
+                        <img src="img/256.png" :src="value.icon" alt="">
+                        <h3 v-text="value.name"></h3>
+                        <p><span v-text="value.userCount"></span></p>
+                        <div class="appDown">
+                            <div>
+                                <p v-text="value.editorIntro">乐在沟通21年，聊天欢乐9亿人！</p>
+                                <a type="button" :href="value.downloadurl" class="btn btn-info">下载&nbsp<span v-text="value.size">122m</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-3">
+                    <div class="appCtn">
+                        <img src="img/256.png" alt="">
+                        <h3>QQ</h3>
+                        <p><span>12212</span>次下载</p>
+                        <div class="appDown">
+                            <div>
+                                <p>乐在沟通21年，聊天欢乐9亿人！</p>
+                                <a type="button" class="btn btn-info">下载</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<!-- 引入axios -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            appList: [],
+            appWord: '',
+            appt:true,
+            appf:false
+        },
+        methods: {
+            getapp: function () {
+                axios.get("https://api.muxiaoguo.cn/api/appstore?appname=" + this.appWord).then(
+                    (response) => {
+                        console.log(response.data.data);
+                        this.appList=response.data.data;
+                        console.log(this.appList);
+               
+                    }
+                ).catch(
+                    (err) => {
+                        console.log(err);
+                    }
+                )
+            }
+        }
+    })
+</script>
+<!--https://api.muxiaoguo.cn/api/appstore?appname=qq-->
+
+</html>

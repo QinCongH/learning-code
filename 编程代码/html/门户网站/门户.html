@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微博</title>
+    <script src="门户.js"></script>
+    <style>
+        /* 1.头部导航栏 */
+        #div1{
+display:flex;  flex-direction: row ; justify-content:space-around;background-image: url('背景2.jpg');
+        }
+        .新闻logo{width:245px;height:58px;order:0;}
+        #txt{width:220px;height:28px;border:solid 1px black;border-radius: 5px;}
+        #search{width:43px;height:33px;border-radius: 5px;outline: none;cursor: pointer;
+        border: 1px solid transparent;position: relative;right: 5px;
+        background-color:#F76F1D;}
+        #search:active{color: red;}
+           #keywords{top: 40px;
+             left: 309px;
+             border: 1px solid #EA996E;
+             border-top: none;
+             list-style: none;  /* 去除无序列表默认自带的小圆点 */
+             widows: 245px;
+             display: none;}
+        .nav li{list-style: none;float:left;margin-left:20px;font: italic small-caps bold 25px 宋体;position: relative;left:100px}
+        .zc{font:  small-caps bold 15px 宋体;margin-left: 150px;}
+        .txt:active{border:greenyellow;}
+        /* 2.内容 */
+        #div2{display:flex;flex-wrap:wrap;justify-content:space-around } 
+        /* 左侧列表 */
+        .main-left li{list-style: none;margin:40px 0px;font-size: 20px;
+        background-color:#F7C69E;width: 130px;height: 50px;border-radius: 5px;text-align: center;}
+        /* 中间 */
+        #content{width: 670px;height: 290px;}
+        .centertu{float:left;width: 510px;height:300px;position: relative;top: 20px;}
+        .centertu1{width:150px;height:143px;position: relative;bottom: 6px;}
+        .centertu2{width:150px;height:143px;position:relative;bottom:22px;}
+        .centertu3{width: 331px;height: 194px;float: left;}
+        /* 右边 */
+        .main-right{
+width: 309px;height:280px;background-color: #F2F2F5;}
+        .loginbar{width: 272px;height: 238px;background-color: #ffffff;position: relative;left: 20px;top:20px;}
+        .main-right1{width: 309px;height:440px;background-color: #F2F2F5;border-top:solid 1px coral; margin-top:20px;
+        }
+        .main-right1 b{position: relative;left: 115px;}
+        .right{list-style: none;}
+        .right li img{width: 53px;height: 53px;margin: 15px 0px;}
+        .bj1 p{font-size: 15px;margin-left: 95px;}
+        a{text-decoration: none;}
+        a:link{color: #000;}
+        a:visited{color:#000}
+        a:hover{color: red}
+        a:active{color: coral;}
+    </style>
+</head>
+<body>
+    <!--1.头部导航栏  -->
+    <div id="div1">
+        <img class="新闻logo" src="新闻logo.png"/>
+        <!-- 例：dl dt dd 垂直导航栏 -->
+        <div class="top"><input id="txt" type="text" placeholder="请输入"/>
+             <input type="button" id="search" value="搜索"/>
+        </div>
+        <ul id="keywords"></ul>
+        <div class="nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">视频</a></li>
+                <li><a href="#">发现</a></li>
+                <li><a href="#">游戏</a></li>
+                </ul>
+                </div>
+                <p class="zc"><a href="#">注册</a>|<a href="#">登录</a></p>
+    </div>
+    <hr>
+    <!-- 2.内容部分 -->
+<div id="div2">
+    <!-- 左侧分类无序列表 -->
+    <div>
+    <ul class="main-left">
+        <li><a href="#">热门</a></li>
+        <li><a href="#">头条</a></li>
+        <li><a href="#">视频</a></li>
+        <li><a href="#">榜单</a></li>
+        <li><a href="#">社会</a></li>
+        <li><a href="#">搞笑</a></li>
+        <li><a href="#">时尚</a></li>
+        <li><a href="#">电影</a></li>
+        <li><a href="#">财经</a></li>
+        <li><a href="#">体育</a></li>
+        <li><a href="#">动漫</a></li>
+        </ul></div>
+        <!-- 中间内容 -->
+        <div id="content">
+            <div>
+               <img class="centertu" src="新闻1.jpg"><span style="position: relative; top: 250px;right: 338px;">##你好呀# #</span>
+       <img class="centertu1" src="新闻小1.jpg"/><span style="position:relative;bottom: 60px;">##你好呀##</span>
+       <img class="centertu2" src="新闻小1.jpg"/><span style="position: relative;left: 520px;bottom: 80px;">##你好呀##</span>
+       </div>
+       <hr>
+       <div>
+        <img class="centertu3" src="新闻1.jpg"/>
+        <p style="font-size:14px;"> 【#VogueMe一千种方式奔向你#｜@章子怡 @UNIQ-王一博 共同演绎】步伐交叠，定睛后思绪翩浮，
+            这是他们始于电梯的第二次相遇。片刻的慌张与意外后，是猛然拉近的距离，既然如此，不如跳支舞吧💃🏻 通往目标的路上总会有小</p>
+            <br><br>
+            <pre><img src="头像.jpg" style="height: 30px;width: 30px;border-radius: 50%;"/>  vogueme 今天10:08</pre>
+           </div>
+           <hr>
+           <div>
+            <video class="centertu3" src="胜利号.mp4" controls="controls"></video>
+            <p style="font-size:14px;"> 【#VogueMe一千种方式奔向你#｜@章子怡 @UNIQ-王一博 共同演绎】步伐交叠，定睛后思绪翩浮，
+                这是他们始于电梯的第二次相遇。片刻的慌张与意外后，是猛然拉近的距离，既然如此，不如跳支舞吧💃🏻 通往目标的路上总会有小</p>
+                <br><br>
+                <pre><img src="头像.jpg" style="height: 30px;width: 30px;border-radius: 50%;"/>  vogueme 今天10:08</pre>
+               </div>
+               <hr>
+               <div>
+                <img class="centertu3" src="新闻1.jpg"/>
+                <p style="font-size:14px;"> 【#VogueMe一千种方式奔向你#｜@章子怡 @UNIQ-王一博 共同演绎】步伐交叠，定睛后思绪翩浮，
+                    这是他们始于电梯的第二次相遇。片刻的慌张与意外后，是猛然拉近的距离，既然如此，不如跳支舞吧💃🏻 通往目标的路上总会有小</p>
+                    <br><br>
+                    <pre><img src="头像.jpg" style="height: 30px;width: 30px;border-radius: 50%;"/>  vogueme 今天10:08</pre>
+                   </div>
+                   <hr>
+                   <div>
+                    <video class="centertu3" src="胜利号.mp4" controls="controls"></video>
+                    <p style="font-size:14px;"> 【#VogueMe一千种方式奔向你#｜@章子怡 @UNIQ-王一博 共同演绎】步伐交叠，定睛后思绪翩浮，
+                        这是他们始于电梯的第二次相遇。片刻的慌张与意外后，是猛然拉近的距离，既然如此，不如跳支舞吧💃🏻 通往目标的路上总会有小</p>
+                        <br><br>
+                        <pre><img src="头像.jpg" style="height: 30px;width: 30px;border-radius: 50%;"/>  vogueme 今天10:08</pre>
+                       </div>
+                       <hr> 
+       </div>
+    <!-- 右侧账号登陆表单 -->
+    <div>
+        <div class="main-right">
+<div class="loginbar">
+<a href="#"><b style="margin-left: 20px;">账号登录</b></a>
+<a href="#"><b style="margin-left: 80px;">安全登录</b></a>
+<hr>
+<input style="width: 220px;height: 22px;margin-left: 20px;" type="text" maxlength="11" placeholder="账号/手机号/邮箱"/>
+<input style="width: 220px;height: 22px; margin-top: 10px;margin-left: 20px;"type="password" maxlength="20" placeholder="密码"/>
+<br>
+<input style="margin-left: 20px;" type="radio"/>记住我
+<a href="#" style="margin-left:90px;">忘记密码</a>
+<br>
+<input style="width: 225px;height: 30px;border-radius:5px;margin-left: 21px;background-color: #F76F1d;" type="button" value="登录"/>
+<p style="font-size:10px;">还没有账号,<a href="#">立即注册!</a>
+    <hr>
+    <p style="font-size: 15px;">其他登录:<a href="#">QQ</a> <a href="#">微博</a> <a href="#">百度</a> <a href="#">微信</a></p>
+</div>
+</div>
+<!-- 右侧热门话题 -->
+<div class="main-right1">
+<b>热门话题</b>
+<ul class="right">
+    <li><img src="背景2.jpg"/><a href="#">#小时候最可怕的事情#</a></li>
+    <li><img src="背景2.jpg"/><a href="#">#小时候最可怕的事情#</a></li>
+    <li><img src="背景2.jpg"/><a href="#">#小时候最可怕的事情#</a></li>
+    <li><img src="背景2.jpg"/><a href="#">#小时候最可怕的事情#</a></li>
+        </ul>
+        <hr>
+        <p><a href="#">查看更多</a></p>
+</div>
+<div class="main-right1">
+    <b>实时热点</b>
+    <ul class="right">
+<li><img src="背景2.jpg"/><a href="#">#小时候最可怕的事情#</a></li>
+<li><img src="背景2.jpg"/><a href="#">#小时候最可怕的事情#</a></li>
+<li><img src="背景2.jpg"/><a href="#">#小时候最可怕的事情#</a></li>
+<li><img src="背景2.jpg"/><a href="#">#小时候最可怕的事情#</a></li>
+    </ul>
+    <hr>
+    <p><a href="#">查看更多</a></p>
+    </div>
+    </div>
+    <!-- 3.底部导航栏 -->      
+    
+</body>
+</html>

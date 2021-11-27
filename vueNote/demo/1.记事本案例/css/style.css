@@ -1,0 +1,110 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+#app {
+    width: 500px;
+    margin: 60px auto;
+    box-shadow: 0 0 29px 1px #ccbebe;
+
+}
+
+.book-top{
+    background: url(../img/img.jpg) no-repeat center;
+    background-size: 100%;
+}
+.book-top input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: #eee;
+    outline: none;
+    font-size: 16px;
+    padding-left: 15px;
+}
+
+.book-ctn li {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+    padding: 0px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.book-ctn li div:nth-child(1) {
+    width: 90%;
+    overflow: hidden;
+}
+
+.book-ctn li div:nth-child(1) p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.book-ctn li div:nth-child(2) {
+    flex: 1;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    opacity: 0;
+    transition: .1s ease;
+}
+.book-ctn li:hover div:nth-child(2){
+    opacity: 1;
+}
+.book-foot {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    height: 30px;
+    line-height: 30px;
+    background-color: #eee;
+    padding: 0px 10px;
+    user-select: none;
+    border-top: 1px solid #eee;
+}
+.book-foot span {
+    cursor: pointer;
+}
+
+.line{
+    width: 100%;
+}
+.line ul{
+    position:relative;
+    width: 100%;
+    background-color: #e4e4e4a8;
+    height: 15px;
+}
+
+.line li:nth-of-type(1){
+    width: 100%;
+    background-color: #ddd;
+    height: 1px;
+}
+.line li:nth-of-type(2){
+    width: 100%;
+    margin-top: 3px;
+    background-color: #ddd;
+    height: 1px;
+}
+.line li:nth-of-type(3){
+    width: 100%;
+    margin-top: 3px;
+    background-color: #ddd;
+    height: 1px;
+}
+.line li:nth-of-type(4){
+    width: 100%;
+    margin-top: 3px;
+    background-color: #ddd;
+    height: 1px;
+}

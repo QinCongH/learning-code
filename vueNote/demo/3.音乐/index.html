@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://use.fontawesome.com/e9934fb665.js"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+    </script> -->
+
+    <title>音乐播放器</title>
+    <!-- 要素
+        1.音乐列表
+        2.专辑封面图
+        3.留言
+        4.底部播放
+        5.搜索
+    -->
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="container">
+                <div class="head-left">
+                    <p>
+                        <a href="#">
+                            <span> 禾</span>耳
+                        </a>
+                    </p>
+                </div>
+                <div class="head-right">
+                    <div>
+                        <input v-model="searchVle" @keyup.enter="queryMusic" type="text" placeholder="请输入"><span>
+                            <i class="fa fa-search" aria-hidden="true" @click="clickMusic"></i></span>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div v-bind:class="{'dotStyle':dotStyle}" class="wheel-and-hamster" role="img"
+                            aria-label="Orange and tan hamster running in a metal wheel">
+                            <div class="wheel"></div>
+                            <div class="hamster">
+                                <div class="hamster__body">
+                                    <div class="hamster__head">
+                                        <div class="hamster__ear"></div>
+                                        <div class="hamster__eye"></div>
+                                        <div class="hamster__nose"></div>
+                                    </div>
+                                    <div class="hamster__limb hamster__limb--fr"></div>
+                                    <div class="hamster__limb hamster__limb--fl"></div>
+                                    <div class="hamster__limb hamster__limb--br"></div>
+                                    <div class="hamster__limb hamster__limb--bl"></div>
+                                    <div class="hamster__tail"></div>
+                                </div>
+                            </div>
+                            <div class="spoke"></div>
+                        </div>
+                        <div class="music-left">
+                            <ul>
+                                <li v-for="item in musicList">
+                                    <div>
+                                        <i class="fa fa-play-circle" aria-hidden="true" @click="playMusic(item.id)"></i>
+                                    </div>
+                                    <div>
+                                        <h6>{{item.name}}</h6>
+                                        <p>{{item.artists[0].name}}</p>
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-youtube-play" aria-hidden="true" v-if="item.mvid!=0"
+                                            @click="musicMv(item.mvid)"></i>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 phnoe">
+                        <div class="music-ctn">
+                            <div class="player_con" :class="{playing:isPlay}">
+                                <img src="images/player_bar.png" class="play_bar" />
+                                <!-- 黑胶碟片 -->
+                                <img src="images/disc.png" class="disc autoRotate" />
+                                <img v-bind:src="musicCover" class="cover autoRotate" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 phnoe">
+                        <h3 class="music-tle">
+                            热门评论
+                        </h3>
+                        <div class="music-right">
+
+                            <dl v-for="item in coverList">
+                                <dt>
+                                    <img src="images/person.png" v-bind:src="item.user.avatarUrl" alt="">
+                                </dt>
+                                <div>
+                                    <dd>
+                                        <h5>{{item.user.nickname}}</h5>
+                                    </dd>
+                                    <dd>
+                                        <p>{{item.content}}</p>
+                                    </dd>
+                                </div>
+
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <audio @play="play" @pause="pause" v-bind:src="musicSrc" class="myaudio" controls autoplay loop></audio>
+            </div>
+        </footer>
+        <div class="videoBox" @click="musicClose" v-bind:class="{'videostyle':videostyle}">
+            <video width="1000px" height="600px" v-bind:src="mvSrc" controls autoplay loop></video>
+        </div>
+    </div>
+</body>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- 官网提供的 axios 在线地址 -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="js/main.js"></script>
+
+</html>

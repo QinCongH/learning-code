@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        	
+			*{
+				transform: rotate(15deg);
+				/* transform: translate(); */
+			}
+			div{
+				width: 150px;
+				height: 150px;
+				background-color:red ;
+				position: relative;
+				left: 300px;
+				top: 300px;
+				/* transform-style:preserve-3d ; */
+				animation: heart 1s infinite;
+			}
+			div::after{
+                /* 伪元素要先定义conten对象 */
+				content: "";
+                /* 转换为块元素 */
+				display: block;
+				width: 150px;
+				height: 150px;
+				background-color:red;
+				border-radius: 50%;
+                /* 给父级定义了相对定位，再给子集定义绝对定位 */
+				position: absolute;
+				right: 75px;
+			}
+			div::before{
+				content: "";
+				display: block;
+				width: 150px;
+				height: 150px;
+				background-color: #FF0000;
+				border-radius: 50%;
+				position: absolute;
+				bottom: 75px;
+			}
+			@keyframes heart{
+				from{ 
+					
+					transform: scale(0);
+				}
+				to{
+					
+					transform: scale(1);
+				}
+			}
+
+    </style>
+</head>
+<body> 
+	
+  <div></div>
+   
+</body>
+</html>

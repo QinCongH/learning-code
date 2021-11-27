@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=prompt("请输入a的值"),b=prompt("请输入b的值");
+        document.write("替换前："+a+'\n'+b+'<br>');
+        //    方法1
+        /*var c;
+        c=a;
+        a=b;
+        b=c;
+        document.write("替换后："+a+'<br>'+b);*/
+        
+    //  方法2
+        a=a*b,
+        b=a/b,
+        a=a/b;
+        document.write("替换后："+a+'\n'+b);
+    </script> 
+</body>
+</html>

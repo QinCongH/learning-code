@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            list-style: none;
+        }
+    .nav
+    {
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        bottom: 50%;
+        margin: auto;
+        width:90px;
+        height:270px;
+        border:none;
+    } 
+    li:nth-of-type(2n){
+        width: 90px;
+        height: 30px;
+        background-color: rgb(131, 127, 121);
+        
+    }
+    li:nth-of-type(2n-1){
+        width: 90px;
+        height: 30px;
+        background-color: rgb(205, 212, 212);
+    }
+  
+    li{
+        text-align: center;
+        line-height: 30px;
+        font-size:8px;
+    } 
+     li:hover{
+         transition: all 0.1s ease-in-out;
+        width:95px;
+        border-radius:5%;
+        transform: scale(1.2);
+        background-color: rgb(182, 253, 255);
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+   
+    </style>
+</head>
+<body>
+    <div class="nav">
+    <ul class="list">
+        <li><a href="#">音乐</a></li>
+        <li><a href="#">电影</a></li>
+        <li><a href="#">歌手</a></li>
+        <li><a href="#">购物</a></li>
+        <li><a href="#">新闻</a></li>
+        <li><a href="#">学习</a></li>
+        <li><a href="#">体育</a></li>
+        <li><a href="#">资料</a></li>
+        <li><a href="#">更多</a></li>
+    </ul>        
+    </div>
+</body>
+</html>

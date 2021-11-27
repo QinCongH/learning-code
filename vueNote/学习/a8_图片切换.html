@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.min.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        #app{
+            width: 800px;
+            height: 400px;
+            margin:60px auto;
+        }
+        .app-img{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .app-img img{
+            max-width: 100%;
+        }
+        .app-px{
+            position: absolute;
+            top: 50%;
+            color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 30px;
+        }
+        .app-px div{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        1.定义数组arrImg存储img
+        2.创建index索引
+        3.添加事件函数
+        4.v-show控制按钮
+     -->
+    <div id="app">
+        <div class="app-img">
+            <div class="app-px">
+                <div class="pre" @click="pre" v-show="index!=0">
+                    <
+                </div>
+                <div class="next" @click="next" v-show="index!=3">
+                    >
+                </div>
+            </div>
+            <img :src="imgArr[index]" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            imgArr:[
+                'img/Popular movie1.jpg',
+                'img/Popular movie2.jpg',
+                'img/Popular movie3.jpg',
+                'img/Popular movie4.jpg'
+            ],
+            index:0
+        },
+        methods:{
+            pre:function(){
+                this.index--;
+            },
+            next:function(){
+                this.index++;
+            }
+        }
+    })
+</script>
+</html>

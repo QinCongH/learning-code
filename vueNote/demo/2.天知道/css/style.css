@@ -1,0 +1,92 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+#app {
+    width: 900px;
+    padding: 60px 0px;
+    margin: auto;
+    background-color: aliceblue;
+    margin-top: 30px;
+}
+
+.weather-top {
+    text-align: center;
+}
+
+.weather-top h1 {
+    color: teal;
+    font-size: 30px;
+}
+
+.weather-top input {
+    width: 400px;
+    FONT-WEIGHT: 60px;
+    height: 34px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    margin-top: 30px;
+}
+
+.weather-top button {
+    width: 50px;
+    height: 34px;
+    border: navajowhite;
+    outline: none;
+    transform: translateX(-5px);
+    background: #eee;
+    cursor: pointer;
+}
+
+.weather-top dl {
+    display: flex;
+    padding-left: 24%;
+    margin-top: 5px;
+}
+
+.weather-top dd {
+    font-size: 12px;
+    margin: 0px 4px;
+    cursor: pointer;
+}
+
+.weather-top dd:hover {
+    color: rgb(238, 184, 184);
+}
+
+.weather-ctn {
+    margin-top: 60px;
+}
+
+.weather-ctn ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.weather-ctn ul li {
+    width: 20%;
+    text-align: center;
+}
+
+.weather-ctn h4 {
+    margin: 10px 0px;
+}
+
+.weather-ctn h4,
+.weather-ctn h2 {
+    color: rgb(219, 184, 28);
+}
+
+.weather-ctn p {
+    font-weight: bold;
+}
+
+.weather-ctn ul li:nth-of-type(2n) {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function newfun(arr)
+        {
+            // 1.利用tostring（）
+            // let a=arr.toString();
+            // console.log(a);
+            // console.log(typeof(a));
+            // 2.利用 " "
+            // console.log(arr+'');
+            // console.log(typeof(arr+''));
+            // 3.join()
+            let a=arr.join("");
+            console.log(a);
+            console.log(typeof(a));
+        }
+        newfun(arr=[1,2,3,5,3]);
+    </script>
+</body>
+</html>

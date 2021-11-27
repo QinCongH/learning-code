@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- https://suggest.taobao.com/sug?code=utf-8&q=%E5%85%8D%E8%B4%B9 -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 官网提供的 axios 在线地址 -->
+    <script  src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="inputVle" @blur="servle" placeholder="请输入内容">
+        <button @click="servle">搜索</button>
+        <ul>
+            <li v-for="value in vleList">{{value[0]}}</li>
+        </ul>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            inputVle: null,
+            vleList:[],
+        },
+        methods: {
+            servle:function() {
+                // 跨域
+                /*
+                    1.动态创建script
+                    2.script传值设置回调函数&callback=test
+                    3.将script插入head标签内
+                    4.在浏览器节点中调用test函数
+                */
+                let script=document.createElement("script");
+                script.src="https://suggest.taobao.com/sug?code=utf-8&q="+this.inputVle+"&callback=test";
+                let head=document.querySelector("head");
+                head.appendChild(script);
+                // 方法1需要存储this
+                // that=this;//存this
+                // window["test"]=function(data){
+                //     that.vleList=data.result;
+                //     console.log(that.vleList);
+                // }            is
+                //方法2 使用箭头函数不需要存储this 
+                    window["test"]=(data)=>{
+                    this.vleList=data.result;
+                    console.log(this.vleList);
+                    }
+            
+            }
+
+        }
+    })
+</script>
+
+</html>

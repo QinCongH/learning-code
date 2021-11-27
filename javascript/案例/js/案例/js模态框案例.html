@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态框案例</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin:0;
+        }
+        html,body{
+            height: 100%;
+        }
+        #wrapper{
+            width:100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.3);
+        }
+        #p1{
+            position: relative;
+            top:150px;
+            width:400px;
+            height: 200px;
+
+
+            text-align: center;
+            line-height: 200px;
+
+            margin:auto;
+            background-color: white;
+        }
+        #span1{
+            position: absolute;
+            right: 0;
+            top:0;
+
+            width: 30px;
+            height: 30px;
+
+            font-size: 20px;
+            line-height: 30px;
+            text-align: center;
+
+            color: #ffffff;
+            background-color: red;
+
+        }
+    </style>
+</head>
+<body>
+
+        <button id="btn">点我一下</button>
+</body>
+<script type="text/javascript">
+    /*思路：
+    * 1.创建一个div盒子，设置好属性
+    * 2.添加p标签和span标签，分别设置好位置，分别插入到div标签里
+    * 3.定义button单击事件
+    * */
+
+
+    var oDiv = document.createElement('div'); //创建一个盒子
+    var oP = document.createElement('p');
+    var oSpan = document.createElement('span');
+    var btn = document.getElementById('btn');
+    var body = document.getElementsByTagName('body');
+
+    btn.onclick = function () {
+
+// innerText添加元素内容
+        oP.innerText = 'This is True music';
+        oSpan.innerText = 'X';
+// appendChild() 方法向节点添加最后一个子节点
+        oDiv.appendChild(oP);
+        oP.appendChild(oSpan);
+// 给元素加上id选择器
+        oDiv.id = 'wrapper';
+        oP.id = 'p1';
+        oSpan.id = 'span1';
+// insertBefore() 方法在您指定的已有子节点之前插入新的子节点。
+        body[0].insertBefore(oDiv,btn);
+    }
+    oSpan.onclick = function(){
+        body[0].removeChild(oDiv);
+    }
+</script>
+</html>

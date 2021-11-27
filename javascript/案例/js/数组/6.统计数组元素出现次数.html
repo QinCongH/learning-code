@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=[1,2,4,4,3,4,3],i,t=0;
+        var arr1=new Array();
+        var a=prompt("请输入要查询元素");
+        for(i=0;i<arr.length;i++)
+        {
+            if(arr[i]==a)
+            {
+                arr1[t++]=arr[i];
+               
+            }
+        }
+         document.write("元素出现个数:"+arr1.length);
+    </script>
+</body>
+</html>

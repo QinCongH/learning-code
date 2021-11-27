@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{ 
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        .div1{
+           
+            background-color: blueviolet;
+        }
+        /* .div2{
+            display: none;
+            background-color: brown;
+        }
+        .div3{
+            display: none;
+            background-color: cyan;
+        } */
+        .btn{
+            float: right;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+
+    </div>
+    <!-- <div class="div2">
+
+    </div>
+    <div class="div3">
+
+    </div> -->
+    <div class="btn">
+     <button class="pre">上一张</button>
+    <button class="next">下一张</button>   
+    </div>
+</body>
+<script>
+    var pre=document.getElementsByClassName('pre');
+    var next=document.getElementsByClassName('next');
+    var div1=document.getElementsByClassName('div1');
+    
+    pre[0].onclick=function(){
+        div1[0].style.backgroudcolor="brown";
+        }
+      
+
+        
+       
+        
+    
+ 
+</script>
+</html> 

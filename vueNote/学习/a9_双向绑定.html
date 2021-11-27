@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="dataVle">
+        <h1>{{dataVle}}</h1>
+        <input type="button" value="修改数据" @click="add">
+        <h2></h2>
+    </div>
+</body>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            dataVle:'HelloWorld'
+        },
+        methods:{
+            add:function(){
+                this.dataVle="嘿哈";
+            }
+        }
+    })
+</script>
+</html>

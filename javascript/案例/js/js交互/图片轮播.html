@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		*{margin:0;padding: 0;}
+		#banner{
+			position: relative;
+			width: 600px;
+			height: 150px;
+			margin:100px auto;
+			overflow: hidden;
+		}
+		#banner ul{
+			position: absolute;
+			left: 0;
+			top:0;
+		}
+		#banner li{
+			float: left;
+			width: 300px;
+			height: 150px;
+			list-style: none;
+		}
+		#banner li img{
+			width: 400px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="banner">
+		<ul>
+			<li><img src="花.jpg"></li>
+			<li><img src="苹果.jpg"></li>
+			<li><img src="草莓.jpg"></li>
+			<li><img src="橙子.jpg"></li>
+			<li><img src="草莓.jpg"></li>
+			<li><img src="苹果.jpg"></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oDiv=document.getElementById('banner')
+			var oUl=oDiv.getElementsByTagName('ul')[0]
+			var oLi=oUl.getElementsByTagName('li')
+			var timer=null
+			//拼接多一份ul里面的内容 这两种写法相等
+			// oUl.innerHTML=oUl.innerHTML+oUl.innerHTML
+			oUl.innerHTML+=oUl.innerHTML
+			//计算ul的宽度
+			oUl.style.width=oLi[0].offsetWidth*oLi.length+'px'
+			function moving(){
+				if(oUl.offsetLeft<-oUl.offsetWidth/2){
+					oUl.style.left='0'
+				}
+				oUl.style.left=oUl.offsetLeft-2+'px'
+			}
+			timer=setInterval(moving,1)
+			oDiv.onmouseover=function(){
+				clearInterval(timer)
+			}
+			oDiv.onmouseout=function(){
+				timer=setInterval(moving,1)
+			}
+		}
+	</script>
+</body>
+<html>

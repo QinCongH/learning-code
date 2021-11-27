@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="IU1.png" alt="">
+    <div></div>
+  <script>
+    //   根据系统时间来变化图片和文字
+    // 1.获取元素
+var img=document.querySelector('img')     
+var div=document.querySelector('div')
+// 2.得到当前系统时间的小时数
+var data=new Date();
+var h=data.getHours();
+// 判断时间周期，确定时间范围的图片和文字
+if(h<=12){
+    img.src="IU1.png";
+    div.innerHTML="上午好"
+}
+else if(h<18&&h>12){
+    img.src="IU2.png";
+    div.innerHTML="下午好"
+}else{
+    img.src="IU1.png";
+    div.innerHTML="晚上好"
+}
+  </script>
+</body>
+</html>

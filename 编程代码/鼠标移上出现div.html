@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+*{margin:0;padding:0;background-color:#ecf1ff;}
+#box{display: flex;justify-content:space-around;margin-top:200px; }
+p{text-align: center;} 
+     /* 使div位于页面正中心  */
+     /* position: absolute;   
+            top: 50%;   
+            left: 50%;   
+            -webkit-transform: translate(-50%, -50%);   
+            -moz-transform: translate(-50%, -50%);   
+            -ms-transform: translate(-50%, -50%);   
+            -o-transform: translate(-50%, -50%);   
+            transform: translate(-50%, -50%);    */
+.icon li{list-style: none;float: left;margin: 0 50px;}
+.icon img{width: 50px;height: 50px;border-radius:50%;}
+a{text-decoration: none;}
+.icon li p{text-align: center;font:solid 20px 宋体;color: black;}
+a:link{color: black;}
+a:hover{color:aquamarine;}
+/* 触发div列表 */
+#push{border: solid 6px #f3cfbd;width:400px;height:140px;border-radius:20px;position: absolute;top: 10px;}
+.list li{list-style-type: none;float: left;margin: 0 5px;}
+.heading{font: bold 宋体;margin-left: 10px;}
+.list img{width: 80px;height: 100px;}
+.list p{font-size: 10px;color: sandybrown;}
+/* 2 */
+#push1{border: solid 6px #f3cfbd;width:400px;height:140px;border-radius:20px;position: absolute;top:10px;}
+.list li{list-style-type: none;float: left;margin: 0 5px;}
+.heading1{font: bold 宋体;margin-left: 10px;}
+
+    </style>
+</head>
+<body>
+
+    <div id="box">
+    <!-- 1 -->
+<div id="effect" onmouseover="show()" onMouseOut="hide()">
+        <!-- 写出div列表 -->
+    <div id="push">
+        <p class="heading">近期热门</p>
+        <ul class="list">
+           <li> <a href="#"><img src="Popular movie1.jpg"><p>我和我的祖国</p></a></li>
+            <li><a href="#"><img src="Popular movie2.jpg"><p>误杀</p></a></li>
+            <li><a href="#"><img src="Popular movie3.jpg"><p>夺命地铁</p></a></li>
+            <li><a href="#"><img src="Popular movie4.jpg"><p>醉拳</p></a></li>
+        </ul>
+    </div>
+     <div class="icon">
+    <div class="icon0"><a href="#"><img src="图标.jpeg"/><p>电影</p></a></div>
+     </div>
+</div>
+<!-- 2 -->
+<div id="effect1" onmouseover="show1()" onMouseOut="hide1()">
+<div id="push1">
+    <p class="heading1">近期热门</p>
+    <ul class="list">
+        <li> <a href="#"><img src="背景.jpeg"><p>我和我的祖国</p></a></li>
+        <li><a href="#"><img src="背景.jpeg"><p>误杀</p></a></li>
+        <li><a href="#"><img src="背景.jpeg"><p>夺命地铁</p></a></li>
+        <li><a href="#"><img src="背景.jpeg"><p>醉拳</p></a></li>
+    </ul>
+</div>
+<div class="icon">
+    <div class="icon1"><a href="#"><img src="图标.jpeg"/><p>动画</p></a></div>
+     </div>
+</div>
+<!-- 3 -->
+<div id="effect1">
+    <div id="push2">
+        <p class="heading1">近期热门</p>
+        <ul class="list">
+            <li> <a href="#"><img src="Popular movie1.jpg"><p>我和我的祖国</p></a></li>
+            <li><a href="#"><img src="Popular movie2.jpg"><p>误杀</p></a></li>
+            <li><a href="#"><img src="Popular movie3.jpg"><p>夺命地铁</p></a></li>
+            <li><a href="#"><img src="Popular movie4.jpg"><p>醉拳</p></a></li>
+        </ul>
+    </div>
+    <div class="icon">
+        <div class="icon1"><a href="#"><img src="图标.jpeg"/><p>运动
+        </p></a></div>
+         </div>
+    </div>
+    <!-- 4 -->
+    <div id="effect1">
+        <div id="push3">
+            <p class="heading1">近期热门</p>
+            <ul class="list">
+                <li> <a href="#"><img src="Popular movie1.jpg"><p>我和我的祖国</p></a></li>
+                <li><a href="#"><img src="Popular movie2.jpg"><p>误杀</p></a></li>
+                <li><a href="#"><img src="Popular movie3.jpg"><p>夺命地铁</p></a></li>
+                <li><a href="#"><img src="Popular movie4.jpg"><p>醉拳</p></a></li>
+            </ul>
+        </div>
+        <div class="icon">
+            <div class="icon1"><a href="#"><img src="图标.jpeg"/><p>音乐</p></a></div>
+             </div>
+        </div>
+    </div>
+  
+    
+
+    <script>
+        // 1.绑定事件
+        var push=document.getElementById("effect");
+var push=document.getElementById("push");
+var push1=document.getElementById("push1");
+var push2=document.getElementById("push2");
+var push3=document.getElementById("push3");
+var icon=document.getElementsByClassName("icon0");
+// 2.将div设置为隐藏
+push.style.display="none";
+push1.style.display="none";
+push2.style.display="none";
+push3.style.display="none";
+function show(){
+    push.style.display="block"
+}
+function hide(){
+    push.style.display="none"
+}
+function show1(){
+    push1.style.display="block"
+}
+function hide1(){
+    push1.style.display="none"
+}
+    </script>
+</body>
+</html>

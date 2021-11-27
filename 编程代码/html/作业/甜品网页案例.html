@@ -1,0 +1,292 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>爱尚美食</title>
+</head>
+ <style>
+ .header{
+ /*background-color:FAEBD7;*/
+ background-image: url(甜品2.png);
+ }
+ .a{
+	/* background-color: #ffe5e5;*/
+    background-image: url(甜品2.png);   
+ }
+ .topnav{
+ overflow: hidden;
+ }
+ div.desc{
+ padding: 0px;
+ text-align: left;
+ }
+ div.img{
+ margin:30px;
+ border: 1px solid rgb(247, 201, 237);
+ float: left;
+ width: 185px;
+ }
+ .logo{width: 50px;height: 50px;position: relative;left:450px;bottom:48px;border-radius:50px;}
+ a:link{color: #000;}
+a:visited{color:black;}
+a:hover{color:rgb(247, 201, 237);}
+a:active{color:rgb(201, 247, 229);}
+a{text-decoration:none;font-size: 20px;}
+</style>
+<body>
+ 
+<!--头部开始 -->
+<div class="header">
+<h1 align="center" style="margin-top:0;font:italic small-caps lighter 40px 楷体 ;">MISS汀-甜品店</h1>
+<img class="logo" src="tinglogo.jpg"/>
+<style type="text/css">
+*{margin:0;padding:0;}
+#banner{position:relative;
+        width:1200px;
+        height:300px;
+        margin:auto;
+        overflow:hidden;
+}
+#banner ul{
+           position:absolute;
+           left:0;
+           top:0;
+}
+#banner li{
+          float:left;
+          width:800px;
+          height:120px;
+          list-style:none;
+}
+#banner li img{
+              width:1200px;
+              height:350px;
+}
+</style>
+</head>
+<body>
+<div id="banner">
+<ul>
+<li><img src="甜品图片.jpg"></li>
+<li><img src="甜品图片2.jpg"></li>
+<li><img src="甜品图片3.jpg"></li>
+</ul>
+</div>
+<script type="text/javascript">
+window.onload=function(){
+var oDiv=document.getElementById('banner')
+var oUl=oDiv.getElementsByTagName('ul')[0]
+var oLi=oUl.getElementsByTagName('li')
+var timer=null
+oUl.innerHTML+=oUl.innerHTML
+oUl.style.width=oLi
+[0].offsetWidth*oLi.length+'px'
+function moving(){
+if(oUl.offsetLeft<-oUl.offsetWidth/2){
+oUl.style.left='0'
+}
+oUl.style.left=oUl.offsetLeft-2+'px'}
+timer=setInterval(moving,50)
+oDiv.onmouseover=function(){
+clearInterval(timer)}
+oDiv.onmouseout=function(){
+timer=setInterval(moving,50)}
+}
+</script>
+ <div align="right">
+ <a href="#">登录</a>|<a href="#">注册</a>
+ </div>
+<div class="topnav">
+  <div align="justify"><a style="color:rgb(247, 201, 237);font:italic small-caps bold 35px 宋体;" href="#">首页 </a><a style="font:italic small-caps bold 35px 宋体;" href="#">奶茶 </a><a style="font:italic small-caps bold 35px 宋体;" href="#">小吃 </a><a style="font:italic small-caps bold 35px 宋体;" href="#">蛋糕 </a>
+    <div class="a">
+    </div>
+    <br>
+    <br>
+  </div>
+</div>
+</div>
+<div class="a">
+<h1 style="font:italic small-caps lighter 40px 楷体">店长推荐</h1>
+<hr>
+<br>
+<div class="a">
+<div class="search">
+<input style="width: 500px;height:30px;border:solid 1px rgb(247, 201, 237);position: relative;left: 300px;" type="text"/>
+<input style="width: 60px;height:30px;border-radius:5px;outline:none ;position: relative;left: 300px;border:1px solid transparent;cursor: pointer;" type="button" value="搜索"/>
+</div>
+<div class="responsive">
+<div class="img">
+<a target="_blank" href="1.jpg">
+<img src="1/5.jpg" alt="" width="181" height="156">
+</a>
+<br class="desc">
+<img style="width: 100px;height: 100px;" src="马卡龙.png"/><br>
+<font size="3">24元</font><br>
+<font size="2" color="#777777">马卡龙</font>
+</div>
+</div>
+<div class="responsive">
+<div class="img">
+<a target="_blank" href="1.jpg">
+<img src="1/4.jpg" alt="" width="181" height="156">
+</a>
+<div class="desc">
+    <img style="width: 100px;height: 100px;" src="提拉米苏.jpg"/><br>
+<font size="3">15元</font><br>
+<font size="2" color="#777777">提拉米苏</font>
+</div>
+</div>
+<div class="responsive">
+<div class="img">
+<a target="_blank" href="1.jpg">
+<img src="1/18.jpg" alt="" width="181" height="156">
+</a>
+<div class="desc">
+    <img style="width: 100px;height: 100px;" src="冰淇淋.png"/><br>
+<font size="3">20元</font><br>
+<font size="2" color="#777777">芝士棒</font>
+</div>
+</div>
+<div class="responsive">
+<div class="img">
+<a target="_blank" href="1.jpg">
+<img src="1/20.jpg" alt="" width="181" height="156">
+</a>
+<div class="desc">
+    <img style="width: 100px;height: 100px;" src="冰淇淋.png"/><br>
+<font size="3">34元</font><br>
+<font color="#777777" size="2">koffer</font></div>
+</div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+<div class="a">
+ <br><br>
+ <h1 style="font:italic small-caps lighter 40px 楷体">人气爆棚</h1>
+<hr>
+<br>
+</div>
+
+<div class="a">
+<div class="responsive">
+<div class="img">
+<a target="_blank" href="1.jpg">
+<img src="1/3.jpg" alt="" width="181" height="185">
+</a>
+<div class="desc">
+<font size="3">29元</font><br>
+<img style="width: 100px;height: 100px;" src="奶茶.png"/><br>
+<font color="#777777" size="2">爆浆奶茶</font></div>
+</div>
+<div class="responsive">
+<div class="img">
+<a target="_blank" href="1.jpg">
+<img src="1/8.jpg" alt="" width="171" height="180">
+</a>
+<div class="desc">
+    <img style="width: 100px;height: 100px;" src="奶茶.png"/><br>
+<font size="3">38元</font><br>
+<font size="2" color="#777777">果味冰激凌</font>
+</div>
+</div>
+<div class="responsive"><p style="font:italic small-caps lighter 20px 楷体">今日份小美好</p>
+<div class="img">
+<a target="_blank" href="1.jpg">
+<img src="1/14.jpg" alt="" width="181" height="186">
+</a>
+<div class="desc">
+    <img style="width: 100px;height: 100px;" src="冰淇淋.png"/><br>
+<font size="3">28元</font><br>
+<font size="2" color="#777777">猪猪卡龙</font>
+</div>
+</div>
+<div class="responsive">
+<div class="img">
+<a target="_blank" href="1.jpg">
+<img src="1/7.jpg" alt="" width="181" height="178">
+</a>
+<div class="desc">
+    <img style="width: 100px;height: 100px;" src="马卡龙.png"/><br>
+  <h4><font size="3">46元</font><br>
+  <font color="#777777" size="2">千层慕斯</font></h4>
+</div>
+</div>
+ <br><br><br><br><br><br><br><br><br><br><br>
+<div class="topic3">
+<p></p>
+</div>
+ </div>
+
+<br><br>
+
+<h1 style="font:italic small-caps lighter 40px 楷体">美好时光</h1>
+<hr>
+<br>
+<div class="a">
+<div class="responsive">
+<div class="img">
+<a target="_blank" href="1.jpg">
+<img src="1/13.jpg" alt="" width="181" height="156">
+</a>
+<div class="desc">
+    <img style="width: 100px;height: 100px;" src="冰淇淋.png"/><br>
+<font size="3">57元</font><br>
+<font color="#777777" size="2">神仙水</font></div>
+</div>
+<div class="responsive">
+<div class="img">
+<a target="_blank" href="1.jpg">
+<img src="1/17.jpg" alt="" width="181" height="156">
+</a>
+<div class="desc">
+    <img style="width: 100px;height: 100px;" src="提拉米苏.jpg"/><br>
+<font size="3">67元</font><br>
+<font size="2" color="#777777">慕斯蛋糕</font>
+</div>
+</div>
+<div class="responsive">
+<div class="img">
+<a target="_blank" href="1.jpg">
+<img src="1/1.jpg" alt="" width="181" height="156">
+</a>
+<div class="desc">
+    <img style="width: 100px;height: 100px;" src="冰淇淋.png"/><br>
+<font size="3">78元</font><br>
+<font size="2" color="#777777">布丁马卡龙</font>
+</div>
+</div>
+<div class="responsive">
+<div class="img">
+<a target="_blank" href="1.jpg">
+<img src="1/9.jpg" alt="" width="181" height="156">
+</a>
+<div class="desc">
+    <img style="width: 100px;height: 100px;" src="奶茶.png"/><br>
+<font size="3">66元</font><br>
+<font size="2" color="#777777">下午茶</font>
+</div>
+</div>
+ 
+
+ 
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<footer>
+<p>
+<a href="#"><strong>欢迎你的到来</strong></a><strong>|
+<a href="#">留言板</a></strong><a href="#"></a>
+</p>
+<br><br>
+<footer>
+<h2 style="font:italic small-caps lighter 25px 楷体"><em>本店特点:甜品能够人带来快乐。</em></h2>
+<h2 style="font:italic small-caps lighter 25px 楷体"><strong>地址：<span style="margin-top:0">MISS汀-甜品店</span>藏龙大道28号&nbsp;&nbsp;</strong></h2>
+<h2 style="font:italic small-caps lighter 25px 楷体"><strong>联系方式:6534234132</strong></h2>
+</div>
+</div>
+</footer>
+</body>
+</html>
+</body>
+</html>

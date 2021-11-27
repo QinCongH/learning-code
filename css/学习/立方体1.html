@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+      width: 500px;
+      height: 500px;
+      position: relative;
+      margin: 200px auto;
+       transform-style: preserve-3d; 
+       perspective: 15000px; 
+      transition: all 5s linear;
+      animation: mytest 5s linear infinite normal; 
+    }
+
+    @keyframes mytest {
+      0% {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+
+      100% {
+        transform: rotateX(360deg) rotateY(360deg);
+
+      }
+    } 
+    .test {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-shadow: 0 0 10px black;
+      border: 1px solid black;
+    }
+
+    .test:nth-child(1) {
+      background-color: red;
+      transform: translateZ(100px);
+    }
+
+    .test:nth-child(2) {
+      background-color: yellow;
+      transform: rotateY(180deg) translateZ(100px);
+    }
+
+    .test:nth-child(3) {
+      background-color: orange;
+      transform: rotateY(90deg) translateZ(100px);
+
+    }
+
+    .test:nth-child(4) {
+      background-color: purple;
+      transform: rotateY(-90deg) translateZ(100px);
+
+    }
+
+    .test:nth-child(5) {
+      background-color: blue;
+      transform: rotateX(90deg) translateZ(100px);
+
+    }
+
+    .test:nth-child(6) {
+      background-color: orangered;
+      transform: rotateX(-90deg) translateZ(100px);
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="test"></div>
+        <div class="test"></div>
+        <div class="test"></div>
+        <div class="test"></div>
+        <div class="test"></div>
+        <div class="test"></div>
+      </div>
+</body>
+</html>

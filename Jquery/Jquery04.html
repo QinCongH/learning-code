@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="bootstrapt/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="bootstrapt/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrapt/css/bootstrap.min.css">
+    <script src="bootstrapt/js/bootstrap.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .head{
+            background-color: #ececec;
+            height: 223px;
+        }
+        .head h4{
+            text-align: center;
+        }
+        .main{
+            /* background-color: #fdfdfe; */
+            height: 150px;
+            /* grid-gap:20px; */
+        }
+        .main ul{
+            float: left;
+
+        }
+        .main ul li{
+            float: left;
+            list-style: none;
+            background-color: #fdfdfe;
+            width: 70px;
+            height:65px;
+        }
+        /* .headcontent{
+            grid-template: 100px 100px 100px ;
+        } */
+        .list li{
+            margin-right: 9px;
+            margin-left: 20px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+           <div class="col-md-12 head">
+               <h4>工商税务服务</h4>
+               <div class="row">
+                   <div class="col-md-2"></div>
+                   <div class="col-md-8 main">
+                        <ul class="row list">
+                            <li class="col-md-1"></li>
+                            <li class="col-md-1"></li>
+                            <li class="col-md-1"></li>
+                            <li class="col-md-1"></li>
+                            <li class="col-md-1"></li>
+                            <li class="col-md-1"></li>
+                            <li class="col-md-1"></li>
+                            <li class="col-md-1"></li>
+                            <li class="col-md-1"></li>
+                            <li class="col-md-1"></li>
+                            <li class="col-md-1"></li>
+                            <li class="col-md-1"></li>
+                            <span>测试</span>
+                        </ul>
+                   </div>
+                    <div class="col-md-2"></div>
+               </div>
+           </div>  
+        </div>
+    </div>
+    <input type="text" id="bty" value="" >
+    <button>发送</button>
+
+
+        <script>
+            $(function(){
+                $("li").eq(2).css("backgroundColor","pink");
+
+            })
+        </script>
+    </body>
+</html>

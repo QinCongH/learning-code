@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 50px;
+            margin:0px auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input class="user" type="text" value="" placeholder="请输入用户名...">
+        <br>
+        <input class="pwd" type="text" name="" id="" value="" placeholder="请输入密码...">
+        <button class="btn" onclick="login()">登录</button>
+        <input type="text" class="result">
+    </div>
+    
+    <!-- 输入密码 账号显示登录成功   
+        如果用户名为admin 密码为000 则登录成功            -->
+    <script>
+        // 1.js
+        // function login()
+        // {
+        //     let user=prompt("请输入用户名","");
+        //     let pwd=prompt("请输入密码：");
+        //     (user=="admin"&&pwd=="000")?alert("登录成功"):alert("账号或者密码错误");
+        // }
+        // login();
+        // 2.与html的交互
+        // function login()
+        // {
+        //     let user=document.getElementsByClassName("user");
+        //     let pwd=document.getElementsByClassName("pwd");
+        //     (user[0].value=="admin"&&pwd[0].value=="000")?alert("登录成功"):alert("账号或者密码错误");
+        // }
+        // 3.jquery
+            $(function(){
+                $(".btn").click(function(){
+                    let user=$(".user").val();
+                    let pwd=$(".pwd").val();
+                    let result=$(".result");
+                    (user=="admin"&&pwd=="000")?result.val("登录成功"):result.val("账号或者密码错误");
+                })
+            })
+    </script>
+</body>
+</html>

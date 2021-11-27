@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        #app {
+            width: 150px;
+            height: 50px;
+            background-color: #00ffff38;
+            margin: auto;
+            margin-top: 60px;
+            display: flex;
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            border: none;
+            background-color: #5f9ea09c;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        span {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: aquamarine;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="jian">
+            -
+        </button>
+        <span>
+            {{num}}
+        </span>
+        <button @click="add">
+            +
+        </button>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            num: 1
+        },
+        methods: {
+            add: function () {
+                if (this.num < 10) {
+                    this.num++;
+                } else {
+                    alert("到顶了！");
+                }
+            },
+            jian: function () {
+                if (this.num > 0) {
+                    this.num--;
+                } else {
+                    alert("到低了！");
+                }
+            }
+        }
+    })
+</script>
+
+</html>

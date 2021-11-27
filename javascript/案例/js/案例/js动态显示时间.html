@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+     #box{
+            width: 200px;
+            height: 30px;
+            border: aqua 1px solid;
+            /* border-radius: 50%; */
+            }
+     </style>
+ </head>
+ <body>
+     <div id="box"></div>
+     <script type="text/javascript">
+    //需要页面每一秒来获取一次时间。setInterval() 方法 定时器
+    window.setInterval("showtime()",10);
+    function showtime(){
+        // 得到当前的时间
+var date=new Date().toLocaleString();
+// 绑定div属性
+var box=document.getElementById("box");
+// 显示到页面上。每一秒向div中写入一次时间。
+box.innerHTML=date;
+    }
+     </script>
+ </body>
+ </html>

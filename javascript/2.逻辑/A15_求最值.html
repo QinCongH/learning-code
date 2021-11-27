@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 利用监哨值,求最大值
+        function newfun(a)
+        {
+            let i=1,max=0;
+            while(i<=a.length)
+            {
+                (a[i]>max)?(max=a[i]):"";
+                i++;
+            }
+            document.write(max);
+            
+        }
+        newfun(a=[12,32,3000]);
+    </script>
+</body>
+</html>

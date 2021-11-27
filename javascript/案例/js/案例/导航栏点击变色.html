@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .navon{
+            width: 300px;
+            height: 100px;
+            background-color: orange;
+            margin:0px auto ;
+        }
+        .navon ul{
+            float: left; 
+        }
+        .navon ul li{
+            float: left;
+            list-style: none;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+        }
+        .navon ul li a{
+            float: left;
+            display: block;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-decoration: none; 
+        }
+        /* .aa ul li a:hover{
+            color: #fff;
+        } */
+        .clickstyle{
+            background-color: palegreen;
+            color: #fff;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="navon">
+        <ul>
+            <li><a href="#">a</a></li>
+            <li><a href="#">b</a></li>
+            <li><a href="#">c</a></li>
+        </ul>
+    </div>
+    <script>
+       
+            var Li=document.getElementsByTagName('li');
+        var i,j;
+        for(i=0;i<Li.length;i++)
+        {
+            Li[i].onclick=function(){
+                for(j=0;j<Li.length;j++)
+                {
+                    Li[j].className="";
+                }
+                this.className+="clickstyle";
+            }
+        }
+        
+       
+        // alert(Li.length);
+    </script>
+</body>
+</html>

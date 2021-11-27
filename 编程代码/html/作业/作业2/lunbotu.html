@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+</head>
+<body>
+    <img src="图1.jpg" id="tu1" width="400px" height="150px"/>
+    <br/>
+    <button id="syz">上一张</button>
+    <button id="xyz">下一张</button>
+    <script>
+        var tu1=document.getElementById('tu1');
+        var syzBtn=document.getElementById('syz');
+        var xyzBtn=document.getElementById('xyz');
+        var minIndex=1,maxIndex=2;currentIndex=minIndex;
+        xyzBtn.onclick=function (){
+            if(currentIndex===maxIndex){
+                currentIndex=minIndex
+            }else{
+                currentIndex++;
+            }
+            tu1.setAttribute('src','图${currentIndex++}.jpg')
+        }
+        syzBtn.onclick=function (){
+            if(currentIndex===minIndex){
+                currentIndex=maxIndex
+            }else{
+                currentIndex--;
+            }
+            tu1.setAttribute('src','图${currentIndex--}.jpg')
+        }
+        </script>
+</body>
+</html>

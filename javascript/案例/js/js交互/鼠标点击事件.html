@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+    #tim{width:200px;height:200px;background:red;margin:0 auto;}
+    </style>
+</head>
+<body>
+    <button id="taller" onclick="taller()">移动</button>
+    <button id="longer">扭曲</button>
+<button id="xuanzhuan">旋转</button>
+<div id="tim"><h1 style="color:blue;">点击一下</h1></div>
+<script>
+//定义名称
+var a=document.getElementById('tim')
+var taller=function(){
+a.style.transform='translate(100px,100px)'
+}
+window.onload=function(){
+    document.getElementById('longer').onclick=function(){
+a.style.transform='skew(20deg,20deg)'
+    }
+    document.getElementById('xuanzhuan').onclick=function(){
+a.style.transform='rotate(45deg)'
+    }}
+    document.getElementById("tim").onclick=function(){
+            alert('哈哈哈哈哈哈哈哈哈哈哈哈')}
+</script>
+</body>
+</html>

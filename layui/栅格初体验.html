@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
+    <script src="//unpkg.com/layui@2.6.8/dist/layui.js"></script>
+    <title>Document</title>
+    <style>
+        .testctn {
+            background-color: skyblue;
+            height: 400px;
+            width: auto;
+        }
+
+        .testctn01 {
+            background-color: rgb(135, 235, 180);
+            height: 400px;
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test">
+        <div class="layui-container">
+            <div class="layui-row layui-col-space20">
+                <div class="layui-col-md4 layui-col-lg6 layui-col-sm6">
+                    <div class="testctn">
+
+                    </div>
+                </div>
+                <div class="layui-col-md4 layui-col-lg6 layui-col-sm6">
+                    <div class="testctn01">
+
+                    </div>
+                </div>
+                <div class="layui-col-md4 layui-col-lg6 layui-col-sm12">
+                    <div class="testctn">
+                        <button class="test" onclick="layer()">测试</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--xs (手机<768px)  -->
+        <!--sm (平板≥768px) -->
+        <!--md (桌面≥992px) -->
+        <!--lg (桌面≥1200px)
+                在实际进行响应使搭建中，md针对平板电脑，sm针对平板,xs针对手机
+            -->
+
+    </div>
+</body>
+<script>
+    function layer() {
+        layui.use('layer', function () {
+            var layer = layui.layer;
+            layer.confirm('您是如何看待前端开发？', {
+                btn: ['重要', '奇葩'] //按钮
+            }, function () {
+                layer.msg('的确很重要', {
+                    icon: 1
+                });
+            }, function () {
+                layer.msg('也可以这样', {
+                    time: 20000, //20s后自动关闭
+                    btn: ['明白了', '知道了']
+                });
+            });
+        });
+
+    }
+</script>
+
+</html>

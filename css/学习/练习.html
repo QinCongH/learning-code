@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 标签选择器 */
+        h2[name=how]{
+            font-size: 18px;
+            color: orange;
+        }
+        /* 伪类选择器 */
+        li:first-child{
+            color: orangered;
+        }
+        li:last-child{
+            color: orange;
+        }
+        .aa{
+            width: 50px;
+            height:50px;
+            border-width:5px;
+            /* 凸起 */
+            /* border-style: outset; */
+            /* 定义 3D 垄状边框 */
+            /* border-style: ridge; */
+            /* 定义 3D 凹槽边框 */
+            border-style: groove;
+            /* border-color: palevioletred; */
+            background-image: radial-gradient(rgb(170, 70, 70), rgb(0, 19, 128), rgb(0, 255, 242));
+        }
+    </style>
+</head>
+<body>
+    <h2 name="how">你好吗</h2>
+    <ul>
+        <li>ni</li>
+        <li>hao</li>
+    </ul>
+    <div class="aa">
+
+    </div>
+</body>
+</html>

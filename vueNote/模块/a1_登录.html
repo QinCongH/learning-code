@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- vue -->
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <!-- element -->
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            text-decoration: none;
+        }
+        body{
+            background:url(./img/img1.jpg) no-repeat center;
+            background-size: cover;
+        }
+        #app {
+            width: 300px;
+            padding: 50px;
+            margin: 150px auto;
+            /* box-shadow: 0px 0px 25px #eaeaea; */
+            background: #00000033;
+        
+        }
+
+        #app .el-form h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .code {
+            width: 70%;
+            /* float: left; */
+        }
+
+        .submit {
+            width: 100%;
+            margin: 30px 0px;
+        }
+        .el-checkbox{
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <el-form ref="form" :rules="rules" :model="loginForm">
+            <h1>登录</h1>
+            <el-form-item prop="username">
+                <!-- autocomplete表单是否规定自动完成 -->
+                <el-input type="text" v-model="loginForm.username" placeholder="请输入用户名" autocomplete="off" >
+
+                </el-input>
+            </el-form-item>
+            <el-form-item prop="password">
+                <el-input type="password" placeholder="请输入密码" v-model="loginForm.password">
+                </el-input>
+            </el-form-item>
+            <el-form-item prop="code">
+                <el-input type="text" placeholder="点击图片切换验证码" class="code" v-model="loginForm.code">
+
+                </el-input>
+                <img :src="codeImg" alt="">
+            </el-form-item>
+
+            <el-checkbox v-model="check">
+                记住我
+            </el-checkbox>
+            <br>
+            <el-button type="primary" class="submit" @click="submitLogin">
+                登录
+            </el-button>
+        </el-form>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data() {
+            return {
+                loginForm: {
+                    username: "",
+                    password: "",
+                    code: '',
+                },
+                codeImg: '',
+                check: false,
+                rules: {
+                    username: [{
+                        required: true,
+                        message: '请输入用户名',
+                        trigger: 'blur'
+                    }],
+                    password: [{
+                        required: true,
+                        message: '请输入密码',
+                        trigger: 'blur'
+                    }],
+                    code: [{
+                        required: true,
+                        message: '请输入验证码',
+                        trigger: 'blur'
+                    }],
+
+                }
+
+            }
+        },
+        methods: {
+            submitLogin() {
+                this.$refs.form.validate((valid) => {
+                    if (valid) {
+                        this.$notify({
+                            title: '成功',
+                            message: '这是一条成功的提示消息',
+                            type: 'success'
+                        });
+                    } else {
+                        this.$notify.error({
+                            title: '错误',
+                            message: '这是一条错误的提示消息'
+                        });
+                        return false;
+                    }
+                });
+            }
+        }
+    })
+</script>
+
+</html>
+
+<!-- 
+    1.非空校验
+        （1）给el-form绑定 
+          :rules="rules" 
+        （2）创建rules对象   
+        rules{}
+        （3）给el-form-item添加prop
+
+    2.登录按钮提示
+
+ -->

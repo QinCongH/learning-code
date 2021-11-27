@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      .num{
+        font-size: 13px;
+        font-family: 宋体;
+        font-weight: bolder;
+        color:red;
+      }
+    </style>
+    <script>
+      /*$(document).ready(
+        function(){
+          // 写代码
+
+        }
+      );*/
+    //简写
+    $(
+      function(){
+        // 写代码
+        $("button").click(
+          function(){
+            $("p").hide();
+          }
+        )
+        /*$("button").hover(
+          function(){
+            $("ul").hide();
+          }
+        )*/
+        $("button").keypress(
+          function(){
+            $("p").show();
+          }
+          
+        );
+        $("form").submit(
+          function(){
+            alert("成功00");
+          }
+        );
+        $("input").load(
+          function(){
+            alert("被改变");
+          }
+        );
+        x=0;//定义累加器初始变量
+        $(window).resize(
+          function(){
+            $(".num").text(x+=1);
+          }
+        );
+        $(window).unload(
+          function(){
+            alert("GoodBey");
+          }
+        )
+        $(".hh").mouseleave(
+          function()
+          {
+            $(":text").hide();
+            
+          }
+        )
+        $(".hh").click(
+          function()
+          {
+            alert($("#tttt").attr('name',"dsfd"));
+          }
+        )
+        $("p").append("<hr>");
+        $(".num").prepend("ssss");
+        console.log("p");
+        $("button").after("这是向后插入文本的测试");
+        $("button").before("这是向前插入文本的测试");
+        // $("p").remove();
+        // $("ul").empty();
+        $("ul li").addClass("num");
+        $(":button").keydown(
+          function()
+          {
+            $("ul li").toggleClass("num");
+          }
+        )
+        $("button").click(
+          function()
+          {
+            alert($(".num").css("font-size","31px"));
+            
+          }
+        )
+        
+       
+      }
+    );
+    </script>
+</head>
+<body>
+<div>
+  <button>你啊</button>
+  <p>你还哦</p>
+  <p class="num">0</p>
+  <ul>
+    <li>1</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <form action="">
+    <input  type="text" value="你好a" name="text" id="tt"/>
+    <textarea name="tttt" id="tttt"  cols="30" rows="10">哈哈哈哈</textarea>
+    <input type="button" value="测试"  class="hh"/>
+    <input type="submit" value="提交" name="text">
+  </form>
+    <button style="color: red;">NNI</button>
+</div>
+</body>
+</html>

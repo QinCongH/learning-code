@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://use.fontawesome.com/e9934fb665.js"></script>
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <title>小黑记事本</title>
+</head>
+<body>
+    <div id="app">
+        <div class="book-top">
+            <input type="text" placeholder="enter添加任务" v-model="inputVle" @keyup.enter="add">
+        </div>
+        <div class="book-ctn">
+            <ul>
+                <li v-for="(item,index) in list">
+                    <div>
+                        <p>
+                            <span>{{index+1}}&nbsp;</span>
+                            {{item}}
+                        </p>
+                    </div>
+                    <div @click="del">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="book-foot">
+            <div>
+             <span v-if="list.length!=0">共{{list.length}}条</span>  
+            </div>
+            <div @click="clean">
+             <span v-show="list.length!=0">clean</span> 
+            </div>
+        </div>
+        <div class="line">
+            <ul>
+                <li>
+     
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            list:["好好学习，天天向上"],
+            inputVle:""
+        },
+        methods:{
+            add:function(){
+                this.list.push(this.inputVle);//增加数据
+            },
+            del:function(){
+                this.list.pop(this.inputVle);//删除数据
+            },
+            clean:function(){
+                this.list=[];
+            }
+        }
+    })
+</script>
+</html>

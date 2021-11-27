@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            height: 0px;
+        }
+        body{
+            display: flex;
+            /* 一.flex-direction 设置主轴方向 */
+             flex-direction: row;
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column-reverse; */
+             /* flex-direction: column; */
+             /* 二.flex-wrap 轴线换行 */
+             /* flex-wrap:wrap ; */
+             /* flex-wrap: wrap-reverse; */
+             flex-wrap: nowrap;
+             /* 三。justify-content 主轴对齐方式 */
+             /* justify-content:center; */
+             /* justify-content: flex-end; */
+             /* justify-content: flex-start; */
+             /* justify-content: space-between; */
+             /* justify-content: space-around; */
+             justify-content: space-evenly;
+             /* 四.align-items多根轴线对齐方式 */
+             align-items: flex-start;
+        }
+        div{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

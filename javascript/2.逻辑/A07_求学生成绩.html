@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+</style>
+
+<body>
+
+
+
+    <!-- 输入班级每位学生的成绩，得出平均值，总分数 -->
+    <script>
+        // 方法1.纯js
+
+        function score() {
+            let p = prompt("请输入学生总人数：");
+            let s = 0,
+                avg;
+            for (let i = 1; i <= p; i++) {
+                let n = Number(prompt("请输入第" + i + "位的分数：", ""));
+                s = s + n;
+            }
+            alert("总成绩" + s);
+            avg = s / p;
+            // alert(s);
+            alert("平均分" + avg);
+        }
+        score();
+
+
+        
+    </script>
+</body>
+
+</html>

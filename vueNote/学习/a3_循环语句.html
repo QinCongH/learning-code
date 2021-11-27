@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 1.v-for 循环数组 
+            v-for="value in array_name"
+        -->
+        <ul>
+            <li v-for="value in sites">
+                {{value}}
+            </li>
+        </ul>
+        <hr>
+        <!-- 2.迭代对象 
+        v-for="(value值,key健,index下标) in object——name
+        -->
+        <dl>
+            <dd v-for="(value,key,index) in object">
+                {{index+1}}、 {{key}}:{{value}}
+            </dd>
+        </dl>
+        <hr>
+        <!-- 3.迭代整数 -->
+        <ul>
+            <li v-for="i in 10">
+                {{i}}
+            </li>
+        </ul>
+    </div>
+    <div id="app">
+        <hyl></hyl>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '.box',
+        data: {
+            sites: ["a", "c", "v"],
+            object: {
+                name: "小明",
+                age: "19",
+                sex: "男"
+            }
+        }
+    })
+    // 注册
+    Vue.component('hyl', {
+        template: '<h1>胡玉玲我爱你</h1>'
+    })
+    // 创建新实例
+    new Vue({
+        el: '#app'
+    })
+</script>
+
+</html>

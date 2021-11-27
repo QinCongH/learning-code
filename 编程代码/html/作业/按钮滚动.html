@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style> #div2,#gunye{margin-top: 30px;width: 572px;height:170px;position: relative;right: 5px;bottom: 25px;}</style>
+</head>
+<body>
+    <div id="div2">
+        <img id="gunye" img src="图1.jpg">
+        <button id="syz"><</button>
+        <button id="xyz">></button>
+        </div>
+    <script>
+        var gunye=document.getElementById('gunye');
+        var syz=document.getElementById('syz');
+        var xyz=document.getElementById('xyz');
+        xyz.onclick=function(){       
+    gunye.setAttribute('src','图2.jpg')
+        }
+        syz.onclick=function(){       
+    gunye.setAttribute('src','图1.jpg')
+        }
+        </script>
+</body>
+</html>

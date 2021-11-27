@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+	</head>
+	<body>
+		<!-- table > tr > td -->
+		<!-- 
+	 width 宽 
+	 height 高
+	 align 对齐方式
+	 border 边框
+	 cellspacing 列于列之间的距离
+	 rules 值为all时，全部相邻边线合并
+	 cellpadding 内边距
+	 rowspan 合并行
+	 colspan 合并列
+	 caption 表头
+	 tr 行
+	 td 列
+	 colgroup 列分组
+	 thead 第一行
+	 tbody 表格内容主体
+	 -->
+		<table width="600" align="center" border="1" cellspacing="0" rules="all" cellpadding="3">
+			<caption>
+				<h1>行李打包清单</h1>
+			</caption>
+			<colgroup>
+				<col width="10%">
+				<col width="20%">
+				<col width="10%">
+				<col width="70%">
+			</colgroup>
+			<thead>
+				<th>序号</th>
+				<th>搬运位置</th>
+				<th>编号</th>
+				<th>注意事项</th>
+			</thead>
+			<tbody align="center">
+				<tr>
+					<td>1</td>
+					<td>武汉</td>
+					<td>10001</td>
+					<td>易碎</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>武汉</td>
+					<td>10001</td>
+					<td>易碎</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>武汉</td>
+					<td>10001</td>
+					<td>易碎</td>
+				</tr>
+				<tr>
+					<td colspan="4" style="padding: 0">
+						<!-- 不同列宽的处理办法  表格嵌套 -->
+						<table width="100%" border="0" rules="all" cellpadding="3">
+							<tbody align="center">
+								<tr>
+									<td width="13%">毕业院校</td>
+									<td width="20%"></td>
+									<td width="13%">所学专业</td>
+									<td width="20%"></td>
+									<td width="15%">毕业时间</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>武汉</td>
+					<td>10001</td>
+					<td>易碎</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>武汉</td>
+					<td>10001</td>
+					<td>易碎</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>武汉</td>
+					<td>10001</td>
+					<td rowspan="3">易碎</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>武汉</td>
+					<td>10001</td>
+					<!-- <td>易碎</td> -->
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>武汉</td>
+					<td>10001</td>
+					<!-- <td>易碎</td> -->
+				</tr>
+				<tr>
+					<td>1</td>
+					<td colspan="3">武汉</td>
+					<!-- <td>10001</td> -->
+					<!-- <td>易碎</td> -->
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

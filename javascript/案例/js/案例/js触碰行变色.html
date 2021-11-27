@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 定义全局字体样式 */
+        *{
+            font-family:微软雅黑 ;
+            }
+            /* 定义h背景颜色 */
+        .h{
+            background-color: #ccc;width: 400px;height: auto;
+            }
+            /* 将h，h2定义鼠标移动上去的伪类样式 */
+        .h:hover,h2:hover{
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 定义循环
+        for(i=1;i<8;i++){
+            // 定义条件语句
+            if(i%2==0){
+                // 写入html标签
+                document.write("<h2 class='h'>"+i+"</h2><br>")
+            }else{
+                document.write('<h2>'+i+'</h2><br>');
+            }
+        }
+    </script>
+</body>
+</html>

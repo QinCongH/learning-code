@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片边框</title>
+    <style>
+#div1{
+width: 1000px;height: 500px;border: 5px solid rgba(235, 177, 177, 0.795);
+}
+#div2{  
+ float: left;width: 300px;height: 300px;
+ background: url(动漫雨.jpg) center no-repeat;border-image-source:url(边框啊.jpg);
+ border-image-width: 27px;
+ border-image-slice: 27 fill;
+ border-image-outset: 0px;
+ border-image-repeat: stretch;
+}
+
+#div3{  
+    float: left;
+    width: 300px;height: 300px;
+    border:15px solid;
+	padding: 30px;
+	border-image-source:url(边框啊.jpg);
+	border-image-repeat: repeat;
+	border-image-slice: 26% 26%;
+    background: url(花.jpg) center no-repeat;
+}
+        </style>
+</head>
+<body>
+ <div id="div1">
+ <div id="div2">
+ </div>
+<div id="div3"></div>
+ </div>
+</body>
+</html>
