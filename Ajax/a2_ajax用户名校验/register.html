@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.wrong{
+				color: brown;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var btn=document.getElementById('btn');
+				var wrong=document.getElementsByClassName('wrong')
+				btn.onclick=function(){
+					// 1.点击时获取用户名
+					var username=document.getElementById('username').value;
+					// 使用js获取到register.php文件,将username传递给这个文件
+					// 1)创建异步对象
+					var xhr=new XMLHttpRequest();
+					// 2)使用欧open("请求方式","地址","是否异步")进行调用
+					xhr.open("get","register.php?username="+username,true);
+					// 3)發送
+					xhr.send(null);
+					// 4）指定回調函數
+					xhr.onreadystatechange=function(){
+						var result=xhr.responseText;
+						wrong[0].innerHTML=result;
+						// console.log(result);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h1>注册页面</h1>
+			<form action="register.php" method="get">
+					用户名：<input type="text" name="username" id="username" value="" />
+					<input type="button" name="" id="btn"  value="验证用户名" />
+					<span class="wrong"></span>
+					<br>
+					密码：<input type="password" name="password" />
+					<br>
+					<input type="submit" name="" id="" value="提交" />
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+				text-decoration: none;
+			}
+
+			.btn {
+				width: 100px;
+				height: 40px;
+				background-color: #87ceeb63;
+				border: none;
+				outline: none;
+				cursor: pointer;
+				border-radius: 10px;
+				float: right;
+			}
+
+			.box div:nth-of-type(2) {
+				width: 100%;
+				height: 500px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				/* overflow: hidden; */
+
+			}
+
+			.box div:nth-of-type(2)>img {
+				max-width: 100%;
+				margin-top: 660px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var box = document.querySelector(".box");
+				var btn = document.querySelector(".btn");
+				var boxImg = document.querySelector('.boxImg');
+
+				btn.onclick = function() {
+
+					boxImg.src = "https://api.oick.cn/random/api.php?type=pc";
+
+				}
+			}
+		</script>
+
+	</head>
+	<body>
+		<div class="box">
+			<div>
+				<button type="button" class="btn">
+					获取
+				</button>
+			</div>
+			<div>
+				<a href="pic.html"> <img src="" class="boxImg"></a>
+			</div>
+		</div>
+	</body>
+</html>

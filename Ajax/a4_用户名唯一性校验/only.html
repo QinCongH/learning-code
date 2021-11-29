@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>用户名唯一性效验</title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+				text-decoration: none;
+			}
+
+			span {
+				color: red;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var username = document.getElementById('username');
+				var show01 = document.getElementsByClassName('show01');
+				var email = document.getElementById('email');
+				var show02 = document.getElementsByClassName('show02');
+				var tel = document.getElementById('tel');
+				var show03 = document.getElementsByClassName('show03');
+				// 用户名
+				username.onblur = function() {
+					// 前提.获取input值
+					var uneValue = username.value;
+					// console.log(uneValue);
+					var xhr = null;
+					if (window.XMLHttpRequest) {
+						xhr = new XMLHttpRequest();
+					} else {
+						xhr = ActiveXObject("Microsoft.XMLHTTP");
+					}
+					xhr.open("get", "username.php?username=" + uneValue, true);
+					xhr.send(null);
+					xhr.onreadystatechange = function() {
+						if (xhr.readyState == 4) {
+							if (xhr.status == 200) {
+								var result = xhr.responseText;
+								// console.log(result);
+								show01[0].innerText = result;
+							}
+						}
+					}
+				}
+				// 邮箱
+				email.onblur = function() {
+					// 前提.获取input值
+					var emaValue = email.value;
+					// console.log(uneValue);
+					var xhr = null;
+					if (window.XMLHttpRequest) {
+						xhr = new XMLHttpRequest();
+					} else {
+						xhr = ActiveXObject("Microsoft.XMLHTTP");
+					}
+					xhr.open("get", "email.php?email" + emaValue, true);
+					xhr.send(null);
+					xhr.onreadystatechange = function() {
+						if (xhr.readyState == 4) {
+							if (xhr.status == 200) {
+								var result = xhr.responseText;
+								// console.log(result);
+								show02[0].innerText = result;
+							}
+						}
+					}
+				}
+				// 电话
+				tel.onblur = function() {
+					var telValue = tel.value;
+					var xhr = null;
+					if (window.XMLHttpRequest) {
+						xhr = new XMLHttpRequest();
+					} else {
+						xhr = ActiveXObject("Microsoft.XMLHTTP");
+					}
+					xhr.open("POST", "tel.php", true);
+					var param = "tel=" + telValue;
+					xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); //设置请求体信息,仅适用于post
+					xhr.send(param);
+					xhr.onreadystatechange=function(){
+						if(xhr.readyState==4){
+							if(xhr.status==200){
+								var result=xhr.responseText;
+								// console.log(result);
+								show03[0].innerText=result;
+							}
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			用户名：<input type="text" name="username" id="username" value="" />
+			<span class="show01">
+
+			</span>
+			<br><br>
+			邮箱：<input type="email" name="email" id="email" value="" />
+			<span class="show02">
+
+			</span>
+			<br><br>
+			电话：<input type="tel" name="tel" id="tel" value="" />
+			<span class="show03">
+
+			</span>
+		</div>
+	</body>
+</html>

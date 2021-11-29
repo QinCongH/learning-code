@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>跨域基本步骤</title>
+		<script src="../a11_跨域与ajax的封装/myAjax.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 1.跨域核心：访问非同源文件 -->
+		<!--	 
+		  (1)引入script文件
+		  （2）引入外部php文件
+		  （3）动态创建script
+		  （4）创建回调
+		 -->
+		<div class="box">
+			<input type="text" name="" id="keywords" value="" placeholder="请输入关键字" />
+			<input type="button" class="btn" name="" id="" value="查询" />
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload = function() {
+
+			var btn = document.querySelector(".btn");
+			var ulbox = document.querySelector(".box ul");
+			btn.onclick = function() {
+				var keywordVle = document.querySelector("#keywords").value;
+				myAjax({
+					type: "get",
+					dataType: "jsonp",
+					url: "http://suggest.taobao.com/sug",
+					success: function(data) {
+						console.log(data);
+						// 遍历二维数组并输出
+						var liTag = ""; //创建存储容器
+						for (var i = 0; i < data.result.length; i++) {
+							var temp = data.result[i]; //存储行
+							// console.log(temp);
+							var tempSug = temp[0]; //存储二维数组中的一维数组第一个值
+
+							liTag += "<li>" + tempSug + "</li>";
+						}
+						console.log(liTag);
+						ulbox.innerHTML = liTag;
+					},
+					jsonpCallback: "test",
+					data: {
+						q: keywordVle
+					}
+				})
+			}
+		}
+	</script>
+</html>

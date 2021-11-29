@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>跨域基本步骤</title>
+	</head>
+	<body>
+		<div class="box">
+			<input type="text" name="" id="keywords" value="" placeholder="请输入关键字" />
+			<input type="button" class="btn" name="" id="" value="查询" />
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload = function() {
+			var btn = document.querySelector(".btn");
+			var ulbox = document.querySelector(".box ul");
+			btn.onclick = function() {
+				var keywordVle = document.querySelector("#keywords").value;
+				// 1.动态创建script标签
+				var script = document.createElement("script");
+				// 2.获取地址
+				script.src = "http://suggest.taobao.com/sug?code=utf-8&q=" + keywordVle + "&callback=test";
+				// 3.回调
+				window["test"] = function(data) {
+					console.log(data);
+					// 遍历二维数组并输出
+					var liTag = ""; //创建存储容器
+					for (var i = 0; i < data.result.length; i++) {
+						var temp = data.result[i]; //存储行
+						// console.log(temp);
+						var tempSug = temp[0]; //存储二维数组中的一维数组第一个值
+
+						liTag += "<li>" + tempSug + "</li>";
+					}
+					console.log(liTag);
+					ulbox.innerHTML = liTag;
+
+				}; 
+				var head = document.querySelector("head");
+				head.appendChild(script);
+			}
+		}
+	</script>
+</html>

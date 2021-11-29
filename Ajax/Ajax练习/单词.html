@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+		</script>
+		<script src="../a11_跨域与ajax的封装/myAjax.js" type="text/javascript" charset="utf-8"></script>
+		<title>单词接口</title>
+		<!-- https://dict.youdao.com/jsonapi -->
+	</head>
+	<body>
+		<div class="box">
+			<input type="text" name="" id="" value="" class="inputVle" placeholder="请输入" />
+			<button type="button" class="btn">搜索</button>
+			<p class="count"></p>
+			<div class="ctn">
+				内容
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				$(".btn").click(function(){
+					var inputVle=$(".inputVle").val();
+					$.ajax({
+						url:"https://dict.youdao.com/jsonapi",
+						dataType:"jsonp",
+						data:{
+							q:inputVle
+						},
+						success:function(data){
+							var obj=JSON.parse(data);
+							console.log(obj);
+						}
+						// contentType: 'application/jsonp'
+					})
+				})
+			})
+		</script>
+	</body>
+</html>

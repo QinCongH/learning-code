@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			.wrong {
+				color: #A52A2A;
+			}
+		</style>
+		<!-- ajax获取文件 -->
+		<script type="text/javascript">
+			window.onload = function() {
+				var btn = document.getElementById('btn');
+				var wrong = document.getElementsByClassName('wrong');
+				btn.onclick = function() {
+					var username_value = document.getElementById('username').value;
+					// 1.创建XMLHttpRequest实例化对象,注意IE6的兼容处理
+					var xhr = null;
+					if (window.XMLHttpRequest) { //如果电脑中有XMLHttpRequest对象
+						xhr = new XMLHttpRequest();
+					} else {
+						// 电脑处于ie6浏览器状态
+						xhr = ActiveXObject("Microsoft.XMLHTTP");
+					}
+					// 2.open  准备发送// 3.send 执行发送
+					// (1)get方法得到数据时
+					// 注意：a.php?username=" + username  其中：a.php指请求地址，username指input字段的id名称，username_value指输入框的值
+					// xhr.open("get", "a.php?username=" + username_value, true);
+					// xhr.send(null);
+					//(2) post方法得到数据时
+					xhr.open("post","a.php",true);
+					var param="username="+username_value;
+					xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");//设置请求体信息,仅适用于post
+					xhr.send(param);//post请求参数在请求体中
+					// 4.回调函数
+					xhr.onreadystatechange = function() {
+						// xhr.status服务器访问状态,xhr.readyState 数据解析
+						if (xhr.readyState == 4) {
+							if (xhr.status == 200) {
+								var result = xhr.responseText;
+								wrong[0].innerHTML = result;
+								// console.log(result);
+							}
+
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>用户名校验</h1>
+		<form action="a.php" method="get">
+			用户名：<input type="text" name="username" id="username" value="" /><!--输入框-->
+			<input type="button" name="btn" id="btn" value="校验" />
+			<span class="wrong"></span>
+			<br>
+			<input type="submit" id="" name="" value="提交" />
+		</form>
+	</body>
+</html>

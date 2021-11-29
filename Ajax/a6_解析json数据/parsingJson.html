@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>json解析</title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+				text-decoration: none;
+			}
+
+			table {
+				margin: auto;
+				border-spacing: 0px;
+				text-align: center;
+				margin-top: 30px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var table_json=document.getElementById("table_json");
+				var xhr = null;
+				if (window.XMLHttpRequest) {
+					xhr = new XMLHttpRequest();
+				} else {
+					xhr = ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xhr.open('get', 'parsingJson.php', true);
+				xhr.send(null);
+				xhr.onreadystatechange = function() {
+					// xhr.status服务器访问状态,xhr.readyState 数据解析
+					if (xhr.readyState == 4) {
+						if (xhr.status == 200) {
+							var result = xhr.responseText;
+							result=JSON.parse(result);//将json转换为数组对象
+							var newHtml=table_json.innerHTML;//定义容器存储表格内容
+							for(var i=0;i<result.length;i++){
+								var item=result[i];
+								var name=item.name;
+								var sex=item.sex;
+								var age=item.age;
+								// console.log(name,sex,age);
+								var tempHtml="<tr><td>"+name+"</td><td>"+age+"</td><td>"+sex+"</td><tr>";
+								console.log(tempHtml);
+								newHtml+=tempHtml;//通过累加器存储
+							}
+							
+							table_json.innerHTML=newHtml;
+						}
+
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+			<h1 align="center">学生信息表</h1>
+		<table id="table_json" border="1" width="500px" align="center">
+			<tr bgcolor="skyblue">
+				<td>姓名</td>
+				<td>年龄</td>
+				<td>性别</td>
+			</tr>
+		</table>
+	</body>
+</html>

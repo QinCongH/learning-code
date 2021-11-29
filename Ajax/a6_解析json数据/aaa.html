@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+				text-decoration: none;
+			}
+			table{
+				border-spacing: 0px;
+				margin: auto;
+				text-align: center;
+			}
+		</style>
+		<title></title>
+	</head>
+	<body>
+		<h1 align="center">学生成绩表</h1><br>
+		<table id="tbeJson" border="1" width="600" cellspacing="" cellpadding="">
+				<tr bgcolor="aqua">
+					<td>姓名</td>
+					<td>性别</td>
+					<td>年龄</td>
+				</tr>
+		</table>
+		<script type="text/javascript">
+			var tbeJson=document.getElementById("tbeJson");
+			var newHtml=tbeJson.innerHTML;
+ 			var xhr=new XMLHttpRequest();
+			xhr.open('get','parsingJson.php',true);
+			xhr.send(null);
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					if(xhr.status==200){
+						var result=xhr.responseText;
+						result=JSON.parse(result);
+						for(var i=0;i<result.length;i++){
+							var item=result[i];
+							var name=item.name;
+							var sex=item.sex;
+							var age=item.age;
+							var tempHtml="<tr><td>"+name+"</td><td>"+sex+"</td><td>"+age+"</td></tr>"
+							newHtml+=tempHtml;
+						}
+						tbeJson.innerHTML=newHtml;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

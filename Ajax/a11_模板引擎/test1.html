@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="template-web.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<script type="text/html" id="test1">
+			{{if tempA}}
+				<h1>{{title}}</h1>
+				<ul>
+					{{each list as value i}}
+						<li>{{i}}.{{value}}</li>
+					{{/each}}
+				</ul>
+			{{/if}}
+			</script>
+		<script type="text/javascript">
+			window.onload=function(){
+				var data={
+					title:'标题',
+					list:['苹果','香蕉','梨子','草莓'],
+					tempA:true
+				}
+				var html=template('test1',data);
+				document.getElementById('box').innerHTML=html;
+			}
+		</script>
+		
+	</body>
+</html>

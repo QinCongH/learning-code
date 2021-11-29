@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>IE</title>
+		<script src="template-web.js"></script>
+	</head>
+	<body>
+		<div id="content"></div>
+		<script id="test1" type="text/html" charset="utf-8">
+			{{if Test}}
+				<h1>{{title}}</h1>
+				<ul>
+					{{each list as value i}}
+					<li>{{i}}{{value}}</li>
+					{{/each}}
+				</ul>
+			{{/if}}
+		</script>
+		<script>
+			var data = {
+				title: '基本例子',
+				Test: true,
+				list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+			};
+			var html=template('test1',data);
+			document.getElementById('content').innerHTML = html;
+		</script>
+	</body>
+</html>
+<!-- 基本用法1.
+ （1）创建type/html类型的 <script id="test1" type="text/html" charset="utf-8">
+ 添加id名称
+ （2）if方法：{{if A}}{{/if}} => A=true则显示；
+	循环数组：	{{each 数组名 as 值 索引}}
+				{{/each}}
+（3）获取数据 template("id名",对象名称);
+ 
+ -->

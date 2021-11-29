@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="/public/css/style.css"> -->
+    <link rel="stylesheet" href="/public/css/style.css">
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
     </script>
@@ -20,53 +20,26 @@
                 留言板列表
             </h1>
             <br>
-            <button type="button" class="btn btn-info">发表留言</button>
+            <button type="button" class="btn btn-info">
+               <a href="/add">发表留言</a> <!-- -->
+            </button>
         </header>
         <article>
             <table class="table">
                 <thead>
-                    <tr>
-                        <td>
+                        <th>
+                            姓名
+                        </th>
+                        <th>
                             内容
-                        </td>
-                        <td>
+                        </th>
+                        <th>
                             时间
-                        </td>
-                    </tr>
+                        </th>
+                  
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-                        </td>
-                        <td>
-                            00-100
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-                        </td>
-                        <td>
-                            00-100
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-                        </td>
-                        <td>
-                            00-100
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-                        </td>
-                        <td>
-                            00-100
-                        </td>
-                    </tr>
+                  {{content}}
                 </tbody>
             </table>
         </article>

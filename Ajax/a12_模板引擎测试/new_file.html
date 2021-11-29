@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>跨域基本步骤</title>
+		<script src="../a11_模板引擎/template-web.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="box">
+			<input type="text" name="" id="keywords" value="" placeholder="请输入关键字" />
+			<input type="button" class="btn" name="" id="" value="查询" />
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/html" id="temptest">
+	<!-- 1.创建type="text/html"的script标签;2.添加id名称;3.template("id名称",对象名称)方法获取html片段; -->
+		{{each result as value i}}
+		<li>{{value[0]}}</li>
+		{{/each}}
+	</script>
+	<script type="text/javascript">
+		window.onload = function() {
+			var btn = document.querySelector(".btn");
+			var ulbox = document.querySelector(".box ul");
+			btn.onclick = function() {
+				var keywordVle = document.querySelector("#keywords").value;
+				// 1.动态创建script标签
+				var script = document.createElement("script");
+				// 2.获取地址
+				script.src = "http://suggest.taobao.com/sug?code=utf-8&q=" + keywordVle + "&callback=test";
+				// 3.回调
+				window["test"] = function(data) {
+					console.log(data);
+					var html=template("temptest",data);
+					console.log(html);
+					 ulbox.innerHTML = html;
+				}; 
+				var head = document.querySelector("head");
+				head.appendChild(script);
+			}
+		}
+	</script>
+</html>
