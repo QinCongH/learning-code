@@ -37,6 +37,7 @@
                     2.script传值设置回调函数&callback=test
                     3.将script插入head标签内
                     4.在浏览器节点中调用test函数
+                    5.效果实现后删除创建的script标签
                 */
                 let script=document.createElement("script");
                 script.src="https://suggest.taobao.com/sug?code=utf-8&q="+this.inputVle+"&callback=test";
@@ -52,8 +53,9 @@
                     window["test"]=(data)=>{
                     this.vleList=data.result;
                     console.log(this.vleList);
+                 
                     }
-            
+                    head.removeChild(script); //去除script
             }
 
         }

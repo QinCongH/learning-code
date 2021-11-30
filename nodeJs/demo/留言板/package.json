@@ -1,0 +1,14 @@
+{
+  "name": "message",
+  "version": "1.0.0",
+  "description": "留言板",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}

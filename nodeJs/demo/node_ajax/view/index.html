@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="user" id="user" placeholder="请输入用户名"><span></span>
+    <br>
+    <br>
+    <input type="text" name="pwd" id="pwd" placeholder="请输入密码"><span></span>
+    <br><br>
+    <button>
+        发送
+    </button>
+</body>
+<script>
+    window.onload = function () {
+        // 获取input及input值
+        const user = document.querySelector("#user");
+        const pwd = document.querySelector("#pwd")
+        const btn = document.querySelector("button")
+        const pwdVle = pwd.value;
+        // user.onblur = function () {
+        //     const userVle = user.value;
+        //     //    1.创建异步
+        //     const xhr = null;
+        //     if (window.XMLHttpRequest) {
+        //         xhr = new XMLHttpRequest();
+        //     } else {
+        //         xhr = ActiveXObject("Microsoft.XMLHTTP");
+        //     }
+        //     xhr.open("get", "username.php?username=" + uneValue, true);
+        //     xhr.send(null);
+        //     xhr.onreadystatechange = function () {
+        //         if (xhr.readyState == 4) {
+        //             if (xhr.status == 200) {
+        //                 var result = xhr.responseText;
+        //                 console.log(result);
+        //                 // show01[0].innerText = result;
+        //             }
+        //         }
+        //     }
+        // }
+
+        btn.onclick=function(){
+                        //    1.创建异步
+            var xhr = null;
+            if (window.XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            } else {
+                xhr = ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhr.open("get", "http://localhost:2002", true);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        // var result = xhr.responseText;
+                        // console.log(result);
+                        // show01[0].innerText = result;
+                    
+                        console.log(xhr.status);
+                    }
+                }
+            }
+        }
+
+
+}
+</script>
+
+</html>
+<!-- 
+    检测用户名唯一性
+        1.页面
+        2.ajax发送请求
+        3.node创建服务器
+        2.后端得到前端的数据并判断是否正确，正确前台显示ok,错误前台显示err
+ -->

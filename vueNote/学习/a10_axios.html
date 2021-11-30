@@ -29,6 +29,7 @@
             getjoke: function () {
                 var that = this; //将this存到that中防止数据变化
                 // 方法1
+                //es6语法不需存储this
                 // axios.get("https://autumnfish.cn/api/joke").then(response => (
                 //     that.joke = response.data
                 // )).catch(error => (console.log(error)));

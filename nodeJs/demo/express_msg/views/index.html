@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+    </script>
+    <title>留言板列表</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                留言板列表
+            </h1>
+            <br>
+            <button type="button" class="btn btn-info">
+               <a href="/add">发表留言</a> <!-- -->
+            </button>
+        </header>
+        <article>
+            <table class="table">
+                <thead>
+                        <th>
+                            姓名
+                        </th>
+                        <th>
+                            内容
+                        </th>
+                        <th>
+                            时间
+                        </th>
+                  
+                </thead>
+                <tbody>
+                    {{each msgs as msg index}}
+                    <tr>
+                     
+                     <td>
+                         {{msg.name}}
+                     </td>
+                     <td>
+                         {{msg.content}}
+                     </td>
+                     <td>
+                        {{msg.msg_time}}
+                     </td>
+                   
+                 </tr>
+                 {{/each}}
+                </tbody>
+            </table>
+        </article>
+    </div>
+</body>
+
+</html>
