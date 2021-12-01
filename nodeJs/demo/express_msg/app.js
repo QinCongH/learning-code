@@ -20,7 +20,7 @@ app.get('/', function (req, res) {
 app.get('/add', function (req, res) {
     res.render('add.html')
 })
-//doedit-page//新增处理页面
+//doedit- page//新增处理页面
 app.get('/doadd', function (req, res) {
     //1.接收数据
     var paramobj = url.parse(req.url, true).query;
@@ -34,7 +34,8 @@ app.get('/doadd', function (req, res) {
     }
     msgs.push(msg); //添加数据
     //3.跳转
-    res.setHeader('Location','/')
+    // res.setHeader('Location','/')
+    res.redirect('/') //重定向方法跳转
     res.statusCode=302
     res.end()
 
