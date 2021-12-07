@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="/bootstrap/dist/js/bootstrap.min.js">
+    </script>
+    <link rel="stylesheet" href="/css/index.css">
+    <title>edit</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>
+                    编辑页面
+                </h2>
+                <br>
+                <form action="/edit" method="post">
+
+                    <input type="hidden" name="id" value="{{studentList.id}}"><!--设置隐藏域--->
+                    <span>姓名</span> <input type="text" name="name" value="{{studentList.name}}" class="form-control"
+                        placeholder="请输入姓名">
+                    <br>
+                    <span>电话</span> <input type="text" name="tel" value="{{studentList.tel}}" class="form-control"
+                        placeholder="请输入电话">
+                    <br>
+                    <span>状态</span> 
+                    <select name="state" value="{{studentList.state}}" class="form-control">
+                        <option value="回家">回家</option>
+                        <option value="旅游">旅游</option>
+                        <option value="留校">留校</option>
+                        <option value="实习">实习</option>
+                    </select>
+                    <br>
+                    <input type="submit" value="提交">
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
