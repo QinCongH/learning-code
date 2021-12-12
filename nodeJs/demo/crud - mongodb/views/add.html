@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="/bootstrap/dist/js/bootstrap.min.js">
+    </script>
+    <link rel="stylesheet" href="/css/index.css">
+    <title>add</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>
+                    增加页面
+                </h2>
+                <br>
+                <form action="/add" method="post">
+                    <span>姓名</span> <input type="text" name="name" class="form-control" placeholder="请输入姓名">
+                    <br>
+                    <span>电话</span> <input type="text" name="tel" class="form-control" placeholder="请输入电话">
+                    <br>
+                    <span>状态</span> <select name="state" class="form-control">
+                        <option>回家</option>
+                        <option>旅游</option>
+                        <option>留校</option>
+                        <option>实习</option>
+                    </select>
+                    <br>
+                    <input type="submit" value="提交">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

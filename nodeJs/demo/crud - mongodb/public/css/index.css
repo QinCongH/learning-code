@@ -1,0 +1,12 @@
+.box {
+    text-align: center;
+   
+}
+.box h2{
+    margin: 30px 0px;
+}
+.addBtn{
+    width: 14%;
+    float: right;
+    color: #fff;
+}
