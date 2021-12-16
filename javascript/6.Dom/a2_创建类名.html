@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box"> 
+
+    </div>
+    <script>
+        window.onload=function(){
+            var Box=document.querySelector(".box")
+        //   一. 类名会被替换 // 
+            // 方法1
+            // Box.className="box1"
+            // 方法2
+            // Box.setAttribute("class","box1")
+        // 二. 类名不会被替换 classList的五种方法
+        // add( String [, String] )  remove( String [,String] )  item ( Number ) toggle ( String [, force] ) contains( String )
+            // 1.添加类名
+               Box.classList.add("box1")
+              //添加多个
+              Box.classList.add("box1","box2","box3")
+            // 2.删除类名
+            Box.classList.remove("box")//删除box类名
+            //3. 按索引返回类名
+           console.log(Box.classList.item(1)); 
+         //  4. 按条件删除或添加类名
+            Box.classList.toggle("box3",true)// 可以是boolen值
+            var i=0
+            Box.classList.toggle("box3",i==0)//可以是表达式
+        }
+    </script>
+</body>
+</html>

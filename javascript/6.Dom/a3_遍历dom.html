@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box1 div{
+        width: 100px;
+        height: 100px;
+        background-color:skyblue;
+        margin-top: 30px;
+    }
+</style>
+<body>
+    <div class="box1">
+        <div>
+            <p class="cil1">
+                12
+            </p>
+        </div>
+        <div>
+            <p> 13
+
+            </p>
+           
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            var boxDiv=document.querySelector(".box1 div")
+            boxDiv[0].onclick=function(){
+               this.classList.add("aa")
+               this.nextSibling.classList.remove("aa")
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload=function(){
+        //    获取body
+            var elBody=document.querySelector("body")
+
+            // 创建元素
+            var elDiv=document.createElement("div");
+            elBody.appendChild(elDiv);
+            var elP=document.createElement("p");
+            // 插入文本
+            elDiv.innerText="fsd"
+            // 插入html
+            elDiv.appendChild(elP)//将p插入到div
+            elP.innerHTML="<h1>test</h1>"
+// 创建元素节点
+            var elStyle=document.createAttribute(style)
+          
+        }
+    </script>
+</body>
+</html>
