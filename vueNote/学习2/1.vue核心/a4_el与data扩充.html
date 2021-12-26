@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"><!--视图-->
+        <h1>
+            {{text}}
+        </h1>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip=false
+    // el写法1，挂载点
+    // var vm=new Vue({//vm
+    //     el:'#app',
+    //     data:{
+    //         text:"数据"
+    //     }
+    // })
+    // el写法2.利用$mount将数据“放/挂载”到vm上去
+    // var vm=new Vue({//vm
+    //     data:{  //data写法1.对象式
+    //         text:"数据"
+    //     }
+    // })
+    // vm.$mount("#app")
+    var vm=new Vue({//vm
+        data(){ //data写法2.函数式
+            return{
+                text:'你好'
+            }
+        }
+    })
+    vm.$mount("#app")
+</script>
+</html>

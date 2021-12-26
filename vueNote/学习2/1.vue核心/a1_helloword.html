@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>HelloWorld</title>
+</head>
+
+<body>
+    <!-- 创建容器 -->
+    <div id="app">
+        <!-- {{}}插值表达式 -->
+        Hello{{value}}
+    </div>
+</body>
+<script>
+        Vue.config.productionTip=false//此行代码取消vue控制台生产环境提示
+</script>
+<script>
+    //创建vue实例，代码从此处开始
+    const app=new Vue({
+        el:'#app',//挂载点，选定vue要使用哪个容器，通常为css选择器。也可以用dom获取元素
+        data:{      //data存储数据，供el指定容器使用
+            value:"world"
+        }
+    })
+</script>
+
+</html>

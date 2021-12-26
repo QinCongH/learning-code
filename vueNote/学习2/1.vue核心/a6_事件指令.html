@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>事件处理</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1.点击事件 -->
+        <!-- <button v-on:click="showName">
+            test
+        </button> -->
+        <!-- 简写： -->
+        <button @click="showName1">
+            test
+        </button>
+        <!-- 传参数时：
+        $event为事件对象，事件会默认带event这个参数
+        event(事件对象)详解 1.事件对象 Event 对象代表事件的状态,比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。
+        -->
+        <button @click="showName2(66,$event)">
+            test
+        </button>
+        <!-- 2.键盘事件 -->
+        <input type="text" @keyup.e="showInfo">
+        <!-- 3.事件修饰符 -->
+        <!-- 阻止事件冒泡stop,组织默认事件prevent，事件只触发一次once -->
+        <!-- 组织默认事件prevent: -->
+        <a @click.prevent="showInfo2"
+            href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Events">
+            test2
+
+        </a>
+
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+                showName1() {
+                    console.log("ok");
+                },
+                showName2(a, e) {
+                    console.log(e.target);
+                },
+                showInfo() {
+                    alert("键盘事件生效")
+                },
+                showInfo2() {
+                    alert("事件修饰符")
+                }
+            }
+
+        })
+        console.log(vm.test);
+    </script>
+</body>
+
+</html>

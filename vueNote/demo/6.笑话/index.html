@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <title>随机笑话</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .box {
+            width: 100%;
+            text-align: center;
+        }
+
+        .box video {
+            width: 100%;
+            height: 315px;
+        }
+
+        .box h2 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            /* //当p标签中有数字使多行显示失效时： */
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+
+        .mt30 {
+            margin-top: 30px;
+        }
+
+        button {
+            width: 100%;
+            border-radius: 5px;
+            background-color: skyblue;
+            outline: none;
+            border: none;
+            height: 35px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row mt30">
+                <div class="col-md-6" v-for="value in JokeList">
+                    <div class="box">
+                        <video :src="value.video" controls></video>
+                        <h2>
+                            {{value.text}}
+                        </h2>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt30">
+                <div class="col-md-4">
+                    &nbsp;
+                </div>
+                <div class="col-md-4">
+                    <button @click="openJoke">
+                        出笑话
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    &nbsp;
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            JokeList:[]
+        },
+        methods: {
+            openJoke: function () {
+                axios.get("https://api.apiopen.top/getJoke?page=1&count=2&type=video").then(ret=>{
+                    console.log(ret)
+                    this.JokeList=ret.data.result
+                    console.log(JokeList);
+                }).catch(
+                    err=>{
+                        console.log(err)
+                    })
+            }
+        }
+    })
+</script>
+
+</html>
