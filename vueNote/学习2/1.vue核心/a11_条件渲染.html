@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 1.v-show   -->
+            <!-- 1.1 传一个布尔值 -->
+        <!-- <h1 v-show="false">
+            好久不见
+        </h1> -->
+        <!-- 1.2 传一个变量 -->
+        <h1 v-show="textHs">
+            好久不见
+        </h1>
+        <!-- //或者传一个表达式        -->
+        <h1 v-show="textHs1=='你好'">
+                好久不见1
+            </h1>
+
+            <!--2.v-if,v-if-else ，v-else
+                v-if传一个表达式，结果为布尔值,true则显示节点，false则隐藏节点,当满足条件时会跳过if后的语句
+            -->
+        <h2 v-if="a">
+            苹果
+        </h2>    
+        <h2 v-else-if="b">
+            香蕉
+        </h2>
+        <h2 v-else>西瓜</h2>
+        <hr>
+            <!-- 使用template不破坏代码结构，template不会渲染成节点 -->
+        <template v-if=""a>
+            <h2>
+                苹果
+            </h2>    
+            <h2>
+                香蕉
+            </h2>
+            <h2>西瓜</h2>
+            <!--  -->
+        </template>
+    </div>
+    <script>
+        Vue.config.productionTip=false
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            textHs:false,//布尔值，
+            textHs1:'你好',
+            a:true,
+            b:true
+        }
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" placeholder="请输入关键词" v-model="keywords">
+        <!-- 1.监视属性完成 -->
+        <!-- <ul>
+            <li v-for="(value,index) in filstars" :key="value.id">
+                {{value.name}}:{{value.age}}
+            </li>
+        </ul> -->
+        <!-- 2.计算属性完成 -->
+        <ul>
+            <li v-for="(value,index) in filstars" :key="value.id">
+                {{value.name}}:{{value.age}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            keywords: '',
+            stars: [{
+                    id: 01,
+                    name: '马冬梅',
+                    age: 20
+                },
+                {
+                    id: 02,
+                    name: '周冬雨',
+                    age: 21
+                },
+                {
+                    id: 03,
+                    name: '周杰伦',
+                    age: 40
+                }
+            ],
+            // filstars: [], //空数组存储starts原始值
+
+        },
+        // <!-- 1.监视属性完成 -->
+        // watch: {
+        //     keywords: {
+        //         immediate: true,//立即执行，空字符串则会立即渲染
+        //         handler(val) {
+        //             this.filstars = this.stars.filter((p) => {
+        //                 return p.name.indexOf(val) !== -1
+        //             })
+        //         }
+
+        //     }
+        // },
+        computed: {
+            filstars() {//生成新属性
+                return this.stars.filter((p) => {
+                    return p.name.indexOf(this.keywords) !== -1
+                })
+            }
+        }
+
+
+
+    })
+</script>
+
+</html>

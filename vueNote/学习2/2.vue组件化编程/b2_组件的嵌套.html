@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    // student组件在school下注册
+    const student = Vue.extend({
+        data() {
+            return {
+                name: '小明',
+                age: '武汉'
+            }
+        },
+        template: `<div>{{name}}-{{age}}</div>`
+    })
+    // school组件在app组件下注册
+    const school = Vue.extend({
+        // 不配置el,因为组件由vm控制;data必须为函数式且有返回值
+        data() {
+            return {
+                name: '湖北学院',
+                adress: '武汉'
+            }
+        },
+        template: `<div>{{name}}-{{adress}} <student></student></div>`, //使用子组件
+        components: {
+            student //父组件为school组件
+        }
+    })
+    //app组件在vue实例下注册,vue中使用app管理所有组件,app为vue实例的子组件,为所有其他的组件的父组件,其他组件都有app管理
+    const app = Vue.extend({
+        template: `
+            <school></school>
+        `,
+        data() {
+            return {
+
+            }
+        },
+        components: {
+            school,
+        }
+    })
+// vue实例
+    new Vue({
+        template:`<app></app>`,//根组件
+        el: '#root',
+        components: {
+            app
+        }
+
+    })
+</script>
+
+</html>

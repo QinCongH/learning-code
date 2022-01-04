@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 3.使用 -->
+        <school></school>
+
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    //定义一个构造函数
+    function Demo() {
+        this.a = 1
+        this.b = 2
+    }
+    //创建一个d实例对象
+    const d = new Demo()
+    console.log(Demo.prototype); //显式原型属性,在构造函数上出现
+    console.log(d.__proto__); //隐式原型属性,在实例对象上出现
+    console.log(Demo.prototype === d.__proto__);
+</script>
+
+</html>

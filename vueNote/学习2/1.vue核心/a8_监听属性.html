@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>监听属性</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>
+            {{count}}
+        </p>
+        <button @click="count++">
+            点我
+        </button>
+<br>
+
+        {{numList.c.d.f}}
+    </div>
+    <!-- 计数器体验watch -->
+</body>
+<script>
+    Vue.config.productionTip = false
+    // 1.$watch实例方法,响应值变化
+    // var vm = new Vue({
+    //     el: "#app",
+    //     data: {
+    //         count: 0
+    //     }
+    // })
+    // vm.$watch('count',function(newV,oldV){
+    //     console.log("新值："+newV);
+    //     console.log("旧值："+oldV);
+    // })
+    // 2.watch对象
+    // var vm = new Vue({
+    //     el: "#app",
+    //     data: {
+    //         count: 0
+    //     },
+    //     watch: {
+    //         count(newV, oldV) {
+    //             console.log("新值：" + newV);
+    //             console.log("旧值：" + oldV);
+    //         }
+    //     }
+    // })
+    // 3.watch对象中的配置参数handler
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            count: 0,
+            numList: {
+                a: 1,
+                b: 2,
+                c:{
+                    d:{
+                        f:3
+                    }
+                }
+            }
+        },
+        methods: {
+            deepjs() {
+                this.numList.a== 2
+            }
+        },
+        watch: {
+            count: {
+                handler(newV, oldV) { //监听值
+                    console.log("新值：" + newV);
+                    console.log("旧值：" + oldV);
+                },
+                immediate: true, //立即执行监听
+            },
+            numList: {
+                handler(newV, oldV) {
+                    console.log("新值：" + newV);
+                    console.log("旧值：" + oldV);
+                },
+                deep: true //深度监视
+            }
+
+        }
+    })
+</script>
+
+</html>

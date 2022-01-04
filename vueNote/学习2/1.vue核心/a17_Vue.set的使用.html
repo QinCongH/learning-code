@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 需求 点击按钮添加朋友的性别
+        Vue.set(要添加的对象，添加的属性，属性值)
+        -->
+        <h2>
+            学生信息
+        </h2>
+        <ul>
+            <li v-for="(v,i) in students" :key="v.id">
+                {{i}} {{v}}
+            </li>
+        </ul>
+        <button @click='adds'>
+            添加sex
+        </button>
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                students: {
+                    name: '小明',
+                    age: 20,
+                    freinds: [
+                        'a', 'b', 'c'
+                    ]
+                }
+            },
+            methods: {
+                adds() {
+                    // 方法1.Vue.set()
+                    // Vue.set(this.students,'sex','男')//往students上添加了一个属性sex，内容为男
+
+                    // 方法2.vm.$set()
+                    // 局部使用
+                    // this.$set(this.students,'sex','男')
+                }
+            }
+        })
+        // 全局添加
+        vm.$set(vm._data.students, 'sex', '男')
+        vm.$set(vm._data.students.freinds,1,'红红')
+    
+    </script>
+</body>
+
+</html>

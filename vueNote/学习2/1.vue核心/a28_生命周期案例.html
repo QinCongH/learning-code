@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2 v-text="word" :style="{opacity:Topcity}">
+            
+        </h2>
+        <button @click="stopTime">
+            点击停止
+        </button>
+    </div>
+    <script>
+        const vm=new Vue({
+            el:'#app',
+            data:{
+                word:'你好世界',
+                Topcity:1
+            },
+            mounted(){//dom生成时使用
+             this.timeId= setInterval(() => {
+                this.Topcity=this.Topcity-0.01
+                if(this.Topcity<0){
+                    this.Topcity=1
+                }
+              }, 16);
+            },
+            methods:{
+                stopTime(){
+                    this.$destroy()//直接销毁
+                }
+            },
+            beforeDestory(){
+                  clearInterval(this.timeId)//清空定时器，需要传定时器id值
+            }
+        })
+
+    </script>
+</body>
+</html>

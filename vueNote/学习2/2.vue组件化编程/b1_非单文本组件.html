@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+<!-- 3.使用 -->
+<school></school>
+<hr>
+<student></student>
+<br>
+<ally></ally>
+</body>
+<script>
+    Vue.config.productionTip=false
+    // 1.创建组件 Vue.extend()
+    const school=Vue.extend({
+        // 不配置el,因为组件由vm控制;data必须为函数式且有返回值
+        data(){
+            return{
+                name:'湖北学院',
+                adress:'武汉'
+            }
+        },
+        template:`<div>{{name}}-{{adress}}</div>`
+    })
+  
+    const student=Vue.extend({
+        // 不配置el,因为组件由vm控制;data必须为函数式且有返回值;template设置组件模板内容
+        data(){
+            return{
+                name:'小明',
+                age:'武汉'
+            }
+        },
+        template:`<div>{{name}}-{{age}}</div>`
+    })
+    
+    // 全局组件,在所有实例中都能使用组件
+    const ally=Vue.extend({
+        // 不配置el,因为组件由vm控制;data必须为函数式且有返回值;template设置组件模板内容
+        data(){
+            return{
+              num:123
+            }
+        },
+        template:`<div>{{num}}</div>`
+    })
+    Vue.component('ally',ally)
+    // 2.注册组件components
+    const app=new Vue({
+        el:'#app',
+        components:{
+            school,
+            student,
+            ally
+        }
+        
+    })
+
+
+</script>
+</html>

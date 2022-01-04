@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        姓：<input type="text" v-model="firstName"><br><br>
+        名: <input type="text" v-model="lastName"><br><br>
+        姓名：<span>{{fullName}}</span>
+    </div>
+
+    <!-- 使用监听属性完成姓名案例 -->
+</body>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            firstName: '张',
+            lastName: '三',
+            fullName: '张-三'
+        },
+        watch: {
+            firstName(newV) {
+                //可以使用异步操作
+                setTimeout(() => {//此时的箭头函数指向window
+                    this.fullName = newV + '-' + this.lastName
+                }, 1000);
+
+            },
+            lastName(newV) {
+                this.fullName = this.firstName + '-' + newV
+            }
+        }
+    })
+</script>
+
+</html>

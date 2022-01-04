@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1.遍历数组 
+        写法1. v-for="值 in 遍历对象"
+       写法2. v-for="(值，索引) in 遍历对象"
+        
+        -->
+        <h1>学生列表</h1>
+        <ul>
+            <li v-for="(value,index) in students" :key="value.id">
+                {{value.name}}:{{value.age}}
+            </li>
+
+        </ul>
+        <hr>
+        <!-- 2.遍历对象 -->
+        <h1>汽车信息</h1>
+        <ul>
+            <li v-for="(value,index) in car" :key="index">
+                {{index}}-{{value}}
+            </li>
+        </ul>
+        <hr>
+
+        <!-- 3.遍历字符串 -->
+        <ul>
+            <li v-for="value,index in strings" :key="index">
+                {{index}}.{{value}}
+            </li>
+        </ul>
+        <hr>
+        <!-- 遍历数值 -->
+        <ul>
+            <li v-for="(value,index) in numbers" :key="index">
+                {{value}}
+            </li>
+        </ul>
+
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                students: [{
+                    id: 01,
+                    name: '小明',
+                    age: 14
+                }, {
+                    id: 02,
+                    name: '小华',
+                    age: 15
+                }, {
+                    id: 03,
+                    name: '小芳',
+                    age: 16
+                }],
+                car: {
+                    name: '奔驰',
+                    year: '2032'
+                },
+                strings: "aabbcc",
+                numbers: 4
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" placeholder="请输入关键词"
+            v-model="keywords">
+            <button @click="sortType=1">升序</button>
+            <button @click="sortType=2">降序</button>
+            <button @click="sortType=0">原序</button>
+        <ul>
+            <li v-for="(value,index) in filstars" :key="value.id">
+                {{value.name}}:{{value.age}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            keywords: '',
+            stars: [{
+                    id: 01,
+                    name: '马冬梅',
+                    age: 20
+                },
+                {
+                    id: 02,
+                    name: '周冬雨',
+                    age: 21
+                },
+                {
+                    id: 03,
+                    name: '周杰伦',
+                    age: 40
+                }
+            ],
+            sortType: 0 //0 原顺序，1 升序，2 降序
+            // filstars: [], //空数组存储starts原始值
+
+        },
+        computed: {
+            filstars() { //生成新属性
+               //过滤操作
+                const arr = this.stars.filter((p) => {
+                    return p.name.indexOf(this.keywords) !== -1
+                })
+                //排序操作
+                if(this.sortType){
+                    arr.sort((p1,p2)=>{
+                        return this.sortType===1?p1.age-p2.age:p2.age-p1.age
+                    })
+                }
+                return arr
+
+            }
+        }
+    })
+</script>
+
+</html>

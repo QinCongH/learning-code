@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>
+            学生信息
+        </h2>
+        <ul>
+            <li v-for="(v,i) in students" :key="v.id">
+                {{v.name}}-{{v.age}}
+            </li>
+        </ul>
+        <button @click="adds">
+            修改学生
+        </button>
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                students: [{
+                        id: 01,
+                        name: "小明",
+                        age: '15'
+                    },
+                    {
+                        id: 02,
+                        name: "小红",
+                        age: '14'
+                    },
+                    {
+                        id: 03,
+                        name: "小方",
+                        age: '16'
+                    },
+                ]
+            },
+            methods: {
+                adds: function () {
+                    //点击按钮，修改用户信息
+                    //1。当直接赋值对象中的变量.此时可以实现修改。
+                    // this.students[0].name="小华"
+                    // this.students[0].age=30
+                    //  2.当直接赋值对象，此时修改了数据中的内容，但是不能渲染到页面上
+                    //原因：vue为data中的对象添加了数据代理，通过set方法才能修改对象的值。vue获取data中的数据，会先将data数据处理传到_data中，并在_data中为每个对象添加数据代理，通过get读取内容，set修改内容并对数据检测，数据发生改变时就渲染到页面，如果直接将data的变量改变或添加变量，不经过_data处理，则vue无法检测到数据并渲染到页面
+                    this.students[0] = {
+                        name: "小华",
+                        age: '30'
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .class1{
+            width: 500px;
+            height: 300px;
+            background-color: aquamarine;
+        }
+        .class2{
+            border-radius: 50%;
+        }
+        .class3{
+            background-color: rgb(225, 195, 236);
+        }
+        .class4{
+            background-color: skyblue;
+        }
+        .class5{
+            border: 10px solid red;
+        }
+        .class6{
+            margin:50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+    <!-- class -->
+        <!-- 1.v-bind绑定class
+        -->
+        <!-- <div class="class1" :class="mystyle">
+
+        </div> -->
+        <!-- 2.v-bind中设置对象 -->
+        <!-- <div class="class1" :class="{'class3':trf1,'class4':trf2}">
+
+        </div> -->
+        <!-- 3.v-bind中设置一个数组 -->
+          <!-- 3-1 数组中是字符串则绑定的是类名-->
+        <!-- <div class="class1" :class="['class2','class3','class4','class5']">  
+
+        </div> -->
+        <!-- 3-2 数组绑定的是变量则绑定的是data数据  -->
+        <!-- <div class="class1" :class="[mystyle,mystyle2]">  
+
+        </div> -->
+          
+<!--style-->
+        <!--       \1.在 v-bind:style 直接设置样式： -->
+        <!-- <div class="class1" :style="{width:'100vw',height:'75vh'}">
+
+        </div> -->
+        <!-- 2. 绑定一个对象 -->
+        <!-- <div class="class1" :style="mystyle3">
+
+        </div> -->
+
+        <!-- 3.绑定一个数组 -->
+        <div class="class1" :style="[mystyle3,{height:'75vh'}]">
+
+        </div>
+
+
+        <br><br>
+        <button>
+            切换
+        </button>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip=false
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            // mystyle:'class2'
+            mystyle:['class2','class3'],
+            mystyle2:'class4',
+            trf1:true,
+            trf2:true,
+            // mystyle3:'backgroundColor:red'//传入字符串
+            mystyle3:{//传入对象
+                backgroundColor:'red',
+                margin:'auto'
+            }
+
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../public/js/day.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 将时间戳格式化为时间 -->
+        <h2>
+            显示格式化的时间
+        </h2>
+        <!-- 1.计算属性实现 -->
+        <h3>
+            现在是： {{fmtTime}}
+        </h3>
+        <!--2. methods实现 -->
+        <h3>
+            现在是： {{getfmtTime()}}
+        </h3>
+        <!-- 3.时间戳实现 
+        
+        过滤器本质是一个函数 语法：参数|函数
+        -->
+        <h3>
+            <!-- 将timen作为 filfmtTime函数的第一个参数，默认参数-->
+            现在是： {{timen | filfmtTime}}
+        </h3>
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                timen: 1640938492542 //时间戳
+            },
+            computed: {
+                fmtTime() {
+                    return dayjs(this.timen).format('YYYY-MM-DD-mm:ss')
+                }
+            },
+            methods: {
+                getfmtTime() {
+                    return dayjs(this.timen).format('YYYY-MM-DD-mm:ss')
+                }
+            },
+            filters: {
+                filfmtTime(value) {
+                    return dayjs(value).format('YYYY-MM-DD-mm:ss')
+                }
+            }
+        })
+
+        // 全局过滤器
+        // Vue.filters("filfmtTime", function (value) {
+        //     return dayjs(value).format('YYYY-MM-DD-mm:ss')
+        // })
+    </script>
+</body>
+
+</html>

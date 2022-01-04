@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>
+            学生信息
+        </h2>
+
+    </div>
+</body>
+<script>
+    let data = {
+        name: "小华",
+        age: '30'
+    }
+    // 创建一个监视的实例对象，用于监视data中的数据变化
+    const obs=new Observer(data)
+    // 准备一个vm实例对象
+    let vm={}
+    vm._data=data=obs
+    function Observer(obj){
+        // 汇总对象所有属性形成一个数组
+        const keys=Object.keys(obj)
+        //遍历
+        keys.forEach((k)=>{
+            Object.defineProperty(this,k,{
+                get(){//读取数据
+                    return obj[k]
+                },
+                set(val){//改数据,监听数据
+                    console.log(`$(k)被修改了，解析模板，生成虚拟dom`);
+                    obj[k]=val
+                }
+            })
+        })
+    }
+</script>
+
+</html>

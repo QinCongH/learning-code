@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1.自定义指令v-big将数字扩大十倍 -->
+        <h1>
+            {{num}}
+        </h1>
+        <h2 v-big="num">
+
+        </h2>
+        <button @click="num++">
+            点
+        </button>
+        <hr>
+        <!-- 2.自定义指令v-fbind-->
+        <input type="text" v-fbind:value="num">
+
+
+        
+    </div>
+
+
+    <script>
+        Vue.config.productionTip = false
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                num: 0
+            },
+         
+            directives: {
+                //big函数调用：1.指定与元素成功绑定时  2.指令所用到的数据发生更新时
+                //    1.函数式
+                big(element, binding) { //element获取节点，binding指令操作
+                    element.innerText = binding.value * 10
+                },
+                   //2.对象式
+                fbind: {
+                    bind(element, binding) { //指令与元素成功绑定时（一上来触发）
+                        element.value = binding.value
+                    },
+                    inserted(element, binding) { //指令所在元素被插入页面时
+                        element.focus()
+                    },
+                    update(element, binding) { //指令所在的模板被重新解析时
+                        element.value = binding.value*2
+                    }
+                }
+
+            }
+        })
+    
+        // 全局绑定
+        // Vue.directive('big',function(element, binding){
+        //     element.innerText = binding.value * 10
+        // })
+    
+    </script>
+</body>
+
+</html>
