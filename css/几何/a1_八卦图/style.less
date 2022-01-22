@@ -1,0 +1,59 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    // box-sizing: border-box;
+}
+#app{
+    width: 300px;
+    height: 150px;
+    border: 8px solid #000;
+    border-radius: 50%;
+    border-width: 4px 4px 150px 4px;
+    border-color: #000;
+    margin: 40px auto;
+    position: relative;
+    &::after{
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #000000;
+    position: absolute;
+    left: 150px;
+    top: 75px;
+    border: 50px solid #fff;
+    border-radius: 50%;
+    }
+    &::before{
+        content: '';
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-color: #ffffff;
+        position: absolute;
+        left: 0px;
+    top: 75px;
+        border: 50px solid rgb(0, 0, 0);
+        border-radius: 50%;
+    }
+    animation: zhuan 10s infinite cubic-bezier(0.19, 0.15, 1, 1);
+}
+@keyframes zhuan {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+
+    
+}

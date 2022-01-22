@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button onclick="saveData()">
+            点击保存数据
+        </button>
+        <button onclick="readData()">
+            点击读取数据
+        </button>
+        <button onclick="removeData()">
+            点击删除数据
+        </button>
+        <button onclick="clearData()">
+            点击清空数据
+        </button>
+    </div>
+    <script>
+        // 1.本地存储--保存   localStorage.setItem(name,v)
+        function saveData() {
+            //字符串
+            localStorage.setItem('msg', '你好')
+            //数组
+            let a = [1, 2, 3, 4]
+            localStorage.setItem('arr', a)
+            //对象  JSON.stringify():对象转字符串
+            let b = {
+                name: '小明',
+                age: '20'
+            }
+            localStorage.setItem('msg2', JSON.stringify(b))
+        }
+        // 2.本地存储---读取 localStorage.getItem('arr')
+        function readData() {
+            console.log(localStorage.getItem('arr'));
+            console.log(localStorage.getItem('msg'));
+            //读取对象
+            let result = localStorage.getItem('msg2')
+            console.log(JSON.parse(result));
+        }
+        //3.本地存储-- 删除
+        function removeData() {
+            localStorage.removeItem('arr')
+        }
+        //4.本地存储-- 清空
+        function clearData() {
+            localStorage.clear()
+        }
+    </script>
+
+</body>
+
+</html>

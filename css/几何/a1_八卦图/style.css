@@ -1,0 +1,56 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+#app {
+  width: 300px;
+  height: 150px;
+  border: 8px solid #000;
+  border-radius: 50%;
+  border-width: 4px 4px 150px 4px;
+  border-color: #000;
+  margin: 40px auto;
+  position: relative;
+  animation: zhuan 10s infinite cubic-bezier(0.19, 0.15, 1, 1);
+}
+#app::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: #000000;
+  position: absolute;
+  left: 150px;
+  top: 75px;
+  border: 50px solid #fff;
+  border-radius: 50%;
+}
+#app::before {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  position: absolute;
+  left: 0px;
+  top: 75px;
+  border: 50px solid #000000;
+  border-radius: 50%;
+}
+@keyframes zhuan {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
