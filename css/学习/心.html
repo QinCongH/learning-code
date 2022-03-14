@@ -11,7 +11,7 @@
 				transform: rotate(15deg);
 				/* transform: translate(); */
 			}
-			div{
+			.heart{
 				width: 150px;
 				height: 150px;
 				background-color:red ;
@@ -21,7 +21,7 @@
 				/* transform-style:preserve-3d ; */
 				animation: heart 1s infinite;
 			}
-			div::after{
+			.heart::after{
                 /* 伪元素要先定义conten对象 */
 				content: "";
                 /* 转换为块元素 */
@@ -34,7 +34,7 @@
 				position: absolute;
 				right: 75px;
 			}
-			div::before{
+			.heart::before{
 				content: "";
 				display: block;
 				width: 150px;
@@ -50,16 +50,22 @@
 					transform: scale(0);
 				}
 				to{
-					
 					transform: scale(1);
 				}
 			}
-
+			.text{
+				position: absolute;
+				z-index: 333;
+			}
     </style>
 </head>
 <body> 
 	
-  <div></div>
+  <div class="heart">
+		<div class="text">
+			王昕
+		</div>
+  </div>
    
 </body>
 </html>
