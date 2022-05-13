@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button onclick="getResult()">
+            点击
+        </button>
+    </div>
+</body>
+<script>
+       function getResult(){
+            let id="7380783694"
+            axios.get('https://api.oick.cn/lishi/api.php').then(function(res){
+                console.log(res);
+            },function(err){
+                console.log(err);
+            })
+        }
+</script>
+</html>

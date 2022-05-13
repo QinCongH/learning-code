@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .jsq {
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            padding: 5px;
+            background-color: #ffffff45;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .jsq div {
+            width: 100%;
+            background-color: #f1f1f1b0;
+        }
+
+        .jsq>div:nth-child(1) {
+            height: 70px;
+        }
+
+        .jsq>div:nth-child(1)>p {
+            line-height: 70px;
+            font-size: 50px;
+            float: right;
+        }
+
+        .jsq>div:nth-child(2) {
+            border-top: 3px solid #fff;
+            border-bottom: 3px solid #fff;
+            flex: 1;
+            display: flex;
+            justify-content: end;
+            flex-direction: column-reverse;
+        }
+
+        .jsq>div:nth-child(2)>p {
+            font-size: 70px;
+            text-align: right;
+        }
+
+        .jsq>div:nth-child(3) {
+            height: 500px;
+        }
+
+        .jsq>div:nth-child(3) ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .jsq>div:nth-child(3)>ul:nth-child(1) li {
+            width: 24%;
+            height: 90px;
+            background-color: #d1d1d180;
+            margin: 5px 0px;
+            border-radius: 5px;
+        }
+
+        .jsq>div:nth-child(3)>ul li>p {
+            line-height: 90px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .jsq>div:nth-child(3)>ul:nth-child(2)>li:nth-child(1) {
+            width: 49%;
+            height: 90px;
+            background-color: #d1d1d180;
+            margin: 5px 0px;
+            border-radius: 5px;
+        }
+
+        .jsq>div:nth-child(3)>ul:nth-child(2)>li:nth-child(2),
+        .jsq>div:nth-child(3)>ul:nth-child(2)>li:nth-child(3) {
+            width: 24%;
+            height: 90px;
+            background-color: #d1d1d180;
+            margin: 5px 0px;
+            border-radius: 5px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="jsq">
+        <div>
+            <p>
+                0
+            </p>
+        </div>
+        <div>
+            <p>
+                0
+            </p>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <p>
+                        .
+                    </p>
+                </li>
+
+                <li>
+                    <p>%</p>
+                </li>
+                <li>
+                    <p>+</p>
+                </li>
+                <li>
+                    <p>
+                        del
+                    </p>
+                </li>
+                <li>
+                    <p>1</p>
+                </li>
+                <li>
+                    <p>2</p>
+                </li>
+                <li>
+                    <p>3</p>
+                </li>
+                <li>
+                    <p>-</p>
+                </li>
+                <li>
+                    <p>4</p>
+                </li>
+                <li>
+                    <p>5</p>
+                </li>
+                <li>
+                    <p>6</p>
+                </li>
+                <li>
+                    <p>*</p>
+                </li>
+                <li>
+                    <p>7</p>
+                </li>
+                <li>
+                    <p>8</p>
+                </li>
+                <li>
+                    <p>9</p>
+                </li>
+                <li>
+                    <p>/</p>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <p>
+                        0
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        ^
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        =
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
