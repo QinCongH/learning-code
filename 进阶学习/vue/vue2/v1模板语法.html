@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-clock]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 插值语法 -->
+        {{text}}
+        <br><br>
+        <!-- 指令语法 -->
+            <!-- 1.v-bind，绑定属性 -->
+        <span v-bind:title="text">
+            {{text}}
+        </span>
+            <!-- 简写 ： -->
+        <p :title="text">
+            {{text}}
+        </p>
+            <!-- 2.v-model,双向绑定  在表单元素上绑定 -->
+        <input type="text" v-model="text">    
+            <!-- 3.v-text  相当于 {{}} -->
+        <h5 v-text="text">
+
+        </h5>
+            <!-- 4.v-html 会渲染html标签 -->
+        <h4 v-html="textHtml">
+
+        </h4>
+            <!-- 5.v-clock  解决因为网络延迟显示插值的问题 -->
+        <h4 v-clock>
+            {{text}}
+        </h4> 
+           <!-- 6.v-once  将模板语法变为静态,不会动态更新-->
+          <h4 v-once>
+                {{text}}
+          </h4> 
+          <!-- 7.v-pre    跳过编译 -->
+          <h4 v-pre>
+                {{text}}
+          </h4>
+
+    </div>
+</body>
+<!-- 引入vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script>
+    // 可以在js控制台通过打印vm._data查看vm下绑定的数据
+    const vm=new Vue({
+        el:'#app',
+        data(){
+            return{
+                text:"helloworld",
+                textHtml:"<a href='javascript:;'>跳转</a>"
+            }
+        },
+    })
+</script> 
+</html>

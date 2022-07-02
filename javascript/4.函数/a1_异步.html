@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async/await</title>
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            const fun1 = (a) => {
+                return a
+            }
+            fun4(33).then(res => { //3.异步会在同步函数后输出结果
+                console.log(res);
+            }).catch(err => {
+                console.log(err);
+            })
+            const fun2 = (b) => {
+                return b
+            }
+            console.log("同步", fun1(1), fun2(2)) //1.同步调用会直接执行
+            async function fun3(c) {
+                return c
+            }
+
+            console.log("异步", fun3(3)) //2.异步调用返回是一个promise对象
+            // 4.获取异步函数回调的结果,使用then
+            let test = fun3(3)
+            test.then((res) => {
+                console.log(res)
+            })
+            //5.使用await必须等到内部所有的 await 命令的 Promise 对象执行完，才会发生状态改变
+            // await 命令后面跟着的是 Promise ，如果不是的话，也会被转换成一个 立即 resolve 的 Promise
+            async function fun4(d) {
+                let a = await fun3(3) //获取异步函数fun3的resolve
+                console.log(a)
+                return d
+            }
+            // 6.如果返回的是 reject 的状态，则会被 catch 方法捕获。 当 async 函数中只要一个 await 出现 reject 状态，则后面的 await 都不会被执行。
+            // 解决方法：多个异步操作，通过try，catch解决
+            async function fun5() {
+                try {
+                    let a = await fun3("异步1")
+                    let b = await fun4("异步2")
+                    return {
+                        a,
+                        b
+                    }
+                } catch (error) {
+                    throw error
+                }
+            }
+            fun5().then(res => { //获取所有异步的结果
+                let {
+                    a,
+                    b
+                } = res
+                console.log(a, b);
+            })
+        }
+    </script>
+</body>
+
+</html>
